@@ -10,9 +10,9 @@ const Homepage = () => {
   console.log('Homepage: Current language is:', currentLanguage);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pointer-events-none">
       {/* Header */}
-      <header className="relative bg-white/80 backdrop-blur-sm border-b border-slate-200/60">
+      <header className="relative bg-white/80 backdrop-blur-sm border-b border-slate-200/60 pointer-events-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4 md:py-6">
             <div className="flex items-center space-x-2">
@@ -37,7 +37,7 @@ const Homepage = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32">
+      <section className="relative py-20 md:py-32 pointer-events-none">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-full px-4 py-2 mb-8">
@@ -59,14 +59,14 @@ const Homepage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
               <Link
                 to="/will-assistant"
-                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="group pointer-events-auto inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 {t('startCreatingWill')}
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 to="/for-lawyers"
-                className="inline-flex items-center px-8 py-4 bg-white/80 backdrop-blur-sm text-slate-700 font-semibold rounded-2xl border border-slate-300 hover:bg-white hover:border-slate-400 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="pointer-events-auto inline-flex items-center px-8 py-4 bg-white/80 backdrop-blur-sm text-slate-700 font-semibold rounded-2xl border border-slate-300 hover:bg-white hover:border-slate-400 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 {t('imALawyer')}
                 <Users className="ml-2 w-5 h-5" />
@@ -76,7 +76,7 @@ const Homepage = () => {
             <div className="mb-16">
               <Link
                 to="/for-foundations"
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-pink-600 to-red-600 text-white font-medium rounded-xl hover:from-pink-700 hover:to-red-700 transition-all duration-300 shadow-md hover:shadow-lg"
+                className="pointer-events-auto inline-flex items-center px-6 py-3 bg-gradient-to-r from-pink-600 to-red-600 text-white font-medium rounded-xl hover:from-pink-700 hover:to-red-700 transition-all duration-300 shadow-md hover:shadow-lg"
               >
                 <Heart className="mr-2 w-4 h-4" />
                 {t('iRepresentFoundation')}
@@ -87,7 +87,7 @@ const Homepage = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-white/50">
+      <section id="features" className="py-20 bg-white/50 pointer-events-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
@@ -133,7 +133,7 @@ const Homepage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-800 text-white py-12">
+      <footer className="bg-slate-800 text-white py-12 pointer-events-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
