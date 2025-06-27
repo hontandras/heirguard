@@ -1,109 +1,69 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 import { translations, Translation } from "../translations";
 
-interface LanguageContextType {
+// --------- típusok ---------
+interface LangCtx {
   currentLanguage: string;
-  setLanguage: (lang: string) => void;
-  t: (key: keyof Translation) => string;
-  detectedCountry: string;
+  t: (k: keyof Translation) => string;
+  setLanguage: (code: string) => void;
+  detectedCountry?: string;
 }
 
-const LanguageContext = createContext<LanguageContextType>({
-  currentLanguage: "en",
-  setLanguage: () => {},
-  t: (key) => translations["en"][key] || key,
-  detectedCountry: "",
-});
+// --------- kontextus ---------
+const LanguageContext = createContext<LangCtx | undefined>(undefined);
 
-// IP-based country detection (simplified for demo)
-const detectCountryFromBrowser = (): { language: string; country: string } => {
-  const browserLang = navigator.language.toLowerCase();
-  
-  // Map browser languages to our supported languages and countries
-  const langMap: Record<string, { lang: string; country: string }> = {
-    'nl': { lang: 'nl', country: 'Netherlands' },
-    'nl-nl': { lang: 'nl', country: 'Netherlands' },
-    'de': { lang: 'de', country: 'Germany' },
-    'de-de': { lang: 'de', country: 'Germany' },
-    'fr': { lang: 'fr', country: 'France' },
-    'fr-fr': { lang: 'fr', country: 'France' },
-    'es': { lang: 'es', country: 'Spain' },
-    'es-es': { lang: 'es', country: 'Spain' },
-    'en-gb': { lang: 'en', country: 'United Kingdom' },
-    'en-us': { lang: 'en', country: 'United States' },
-  };
+// --------- provider ---------
+export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+  // böngészőtől vagy localStorage‑tól indulunk
+  const browserLang = navigator.language.split("-")[0];
+  const saved = localStorage.getItem("language");
+  const startLang = saved ?? (["en", "nl", "de", "fr", "es"].includes(browserLang) ? browserLang : "en");
 
-  // Check exact match first
-  if (langMap[browserLang]) {
-    return langMap[browserLang];
-  }
+  const [currentLanguage, setCurrentLanguage] = useState<string>(startLang);
+  const [detectedCountry, setDetectedCountry] = useState<string>();
 
-  // Check language prefix
-  const langPrefix = browserLang.split('-')[0];
-  if (langMap[langPrefix]) {
-    return langMap[langPrefix];
-  }
-
-  // Default to English/US
-  return { lang: 'en', country: 'United States' };
-};
-
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [currentLanguage, setCurrentLanguage] = useState("en");
-  const [detectedCountry, setDetectedCountry] = useState("");
-
+  // Detect country from browser language
   useEffect(() => {
-    // Check localStorage first
-    const storedLang = localStorage.getItem("heirguard-language");
-    const storedCountry = localStorage.getItem("heirguard-country");
+    const fullLang = navigator.language;
+    const countryCode = fullLang.split("-")[1];
     
-    if (storedLang && translations[storedLang]) {
-      setCurrentLanguage(storedLang);
-      if (storedCountry) {
-        setDetectedCountry(storedCountry);
-      }
-    } else {
-      // Detect from browser/IP
-      const detected = detectCountryFromBrowser();
+    if (countryCode) {
+      const countryMap: Record<string, string> = {
+        'NL': 'Netherlands',
+        'DE': 'Germany', 
+        'FR': 'France',
+        'ES': 'Spain',
+        'GB': 'United Kingdom',
+        'US': 'United States'
+      };
       
-      if (translations[detected.lang]) {
-        setCurrentLanguage(detected.lang);
-        setDetectedCountry(detected.country);
-        localStorage.setItem("heirguard-language", detected.lang);
-        localStorage.setItem("heirguard-country", detected.country);
+      if (countryMap[countryCode]) {
+        setDetectedCountry(countryMap[countryCode]);
       }
     }
   }, []);
 
-  const setLanguage = (lang: string) => {
-    console.log('LanguageContext: Setting language to:', lang);
-    if (translations[lang]) {
-      setCurrentLanguage(lang);
-      localStorage.setItem("heirguard-language", lang);
-      
-      // Update country based on language if not already set
-      if (!detectedCountry) {
-        const countryMap: Record<string, string> = {
-          'nl': 'Netherlands',
-          'de': 'Germany',
-          'fr': 'France',
-          'es': 'Spain',
-          'en': 'United Kingdom'
-        };
-        
-        const country = countryMap[lang] || 'United States';
-        setDetectedCountry(country);
-        localStorage.setItem("heirguard-country", country);
-      }
-    }
+  // frissítés + tárolás + <html lang="">
+  const setLanguage = (code: string) => {
+    console.log("LanguageContext: Setting language to:", code);
+    setCurrentLanguage(code);
+    localStorage.setItem("language", code);
+    document.documentElement.lang = code;
   };
 
-  const t = (key: keyof Translation): string => {
-    const translation = translations[currentLanguage]?.[key] || translations["en"][key] || key;
-    return translation;
-  };
+  const t = (key: keyof Translation) =>
+    translations[currentLanguage]?.[key] || translations["en"][key] || key;
 
-  console.log('LanguageContext: Current language is:', currentLanguage);
+  // első renderkor állítsd be a <html lang="">‑et
+  useEffect(() => {
+    document.documentElement.lang = currentLanguage;
+  }, [currentLanguage]);
 
   return (
     <LanguageContext.Provider value={{ currentLanguage, setLanguage, t, detectedCountry }}>
@@ -112,10 +72,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   );
 };
 
+// --------- fogyasztó (hook) ---------
 export const useLanguage = () => {
-  const context = useContext(LanguageContext);
-  if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
-  return context;
+  const ctx = useContext(LanguageContext);
+  if (!ctx) throw new Error("useLanguage must be used within LanguageProvider");
+  return ctx;
 };

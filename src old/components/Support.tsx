@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, HelpCircle, Mail, Send, CheckCircle } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
 
 const Support = () => {
-  const { t } = useLanguage();
-  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,6 +22,7 @@ const Support = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Create mailto link with form data
     const subject = encodeURIComponent(`Support Request: ${formData.subject}`);
     const body = encodeURIComponent(`
 Name: ${formData.name}
@@ -49,7 +47,7 @@ Sent from HeirGuard Support Form
           <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="w-10 h-10 text-white" />
           </div>
-          <h1 className="text-3xl font-bold text-slate-800 mb-4">{t('thankYou')}</h1>
+          <h1 className="text-3xl font-bold text-slate-800 mb-4">Thank You!</h1>
           <p className="text-lg text-slate-600 mb-8">
             We've received your submission. Your email client should have opened with your support request. 
             We'll get back to you as soon as possible.
@@ -59,7 +57,7 @@ Sent from HeirGuard Support Form
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
           >
             <ArrowLeft className="mr-2 w-4 h-4" />
-            {t('backToHome')}
+            Back to Home
           </Link>
         </div>
       </div>
@@ -77,14 +75,14 @@ Sent from HeirGuard Support Form
               className="flex items-center space-x-2 text-slate-600 hover:text-slate-800 transition-colors mr-8"
             >
               <ArrowLeft className="w-5 h-5" />
-              <span>{t('backToHome')}</span>
+              <span>Back to Home</span>
             </Link>
             
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
                 <HelpCircle className="w-5 h-5 text-white" />
               </div>
-              <span className="text-lg font-semibold text-slate-800">{t('support')}</span>
+              <span className="text-lg font-semibold text-slate-800">Support</span>
             </div>
           </div>
         </div>
@@ -99,14 +97,15 @@ Sent from HeirGuard Support Form
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
-            {t('howCanWeHelp')}{' '}
+            How Can We{' '}
             <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              You?
+              Help You?
             </span>
           </h1>
           
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            {t('supportDescription')}
+            Get in touch with our support team for any questions about HeirGuard, 
+            technical issues, or feedback about your experience.
           </p>
         </div>
 
@@ -115,7 +114,7 @@ Sent from HeirGuard Support Form
             <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
               <Mail className="w-8 h-8 text-white" />
             </div>
-            <h2 className="text-2xl font-bold text-slate-800 mb-2">{t('contactSupportTeam')}</h2>
+            <h2 className="text-2xl font-bold text-slate-800 mb-2">Contact Our Support Team</h2>
             <p className="text-slate-600">We're here to help you with any questions or issues</p>
           </div>
 
@@ -123,7 +122,7 @@ Sent from HeirGuard Support Form
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
-                  {t('name')} *
+                  Your Name *
                 </label>
                 <input
                   type="text"
@@ -139,7 +138,7 @@ Sent from HeirGuard Support Form
 
               <div>
                 <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
-                  {t('emailAddress')} *
+                  Email Address *
                 </label>
                 <input
                   type="email"
@@ -156,7 +155,7 @@ Sent from HeirGuard Support Form
 
             <div>
               <label htmlFor="subject" className="block text-sm font-semibold text-slate-700 mb-2">
-                {t('subject')} *
+                Subject *
               </label>
               <input
                 type="text"
@@ -172,7 +171,7 @@ Sent from HeirGuard Support Form
 
             <div>
               <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
-                {t('message')} *
+                Message *
               </label>
               <textarea
                 id="message"
@@ -192,7 +191,7 @@ Sent from HeirGuard Support Form
                 className="w-full inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
               >
                 <Send className="mr-2 w-5 h-5" />
-                {t('supportRequest')}
+                Send Support Request
               </button>
             </div>
           </form>
@@ -202,7 +201,7 @@ Sent from HeirGuard Support Form
               <Mail className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="text-sm text-blue-800">
-                  <strong>{t('directContact')}</strong>{' '}
+                  <strong>Direct Contact:</strong> You can also reach us directly at{' '}
                   <a href="mailto:hont@pertexholdings.com" className="underline hover:no-underline">
                     hont@pertexholdings.com
                   </a>

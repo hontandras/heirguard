@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Shield, Eye, Lock, Globe, FileText, AlertTriangle } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
 
 const PrivacyPolicy = () => {
-  const { t } = useLanguage();
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Header */}
@@ -17,14 +14,14 @@ const PrivacyPolicy = () => {
               className="flex items-center space-x-2 text-slate-600 hover:text-slate-800 transition-colors mr-8"
             >
               <ArrowLeft className="w-5 h-5" />
-              <span>{t('backToHome')}</span>
+              <span>Back to Home</span>
             </Link>
             
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
                 <Shield className="w-5 h-5 text-white" />
               </div>
-              <span className="text-lg font-semibold text-slate-800">{t('privacyPolicy')}</span>
+              <span className="text-lg font-semibold text-slate-800">Privacy Policy</span>
             </div>
           </div>
         </div>
@@ -35,25 +32,26 @@ const PrivacyPolicy = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-full px-4 py-2 mb-6">
             <Shield className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-medium text-slate-700">{t('privacyPolicy')}</span>
+            <span className="text-sm font-medium text-slate-700">Privacy Policy</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
-            {t('privacyPolicyTitle')}{' '}
+            Privacy{' '}
             <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Policy
             </span>
           </h1>
           
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            {t('privacyPolicyDesc')}
+            Your privacy is fundamental to our mission. This policy explains how we collect, 
+            use, and protect your personal information.
           </p>
         </div>
 
         {/* Last Updated */}
         <div className="bg-blue-50 border border-blue-200 rounded-2xl p-4 mb-8 text-center">
           <p className="text-blue-800 text-sm">
-            <strong>{t('lastUpdated')}:</strong> January 2024 • <strong>{t('effectiveDate')}:</strong> January 2024
+            <strong>Last Updated:</strong> January 2024 • <strong>Effective Date:</strong> January 2024
           </p>
         </div>
 
@@ -64,10 +62,12 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center">
               <FileText className="w-6 h-6 mr-3 text-blue-600" />
-              {t('introduction')}
+              Introduction
             </h2>
             <p className="text-slate-600 leading-relaxed mb-4">
-              {t('introductionText')}
+              HeirGuard ("we," "our," or "us") is committed to protecting your privacy and personal data. 
+              This Privacy Policy explains how we collect, use, disclose, and safeguard your information 
+              when you use our digital will creation platform and related services.
             </p>
             <p className="text-slate-600 leading-relaxed">
               By using our services, you agree to the collection and use of information in accordance 
@@ -80,12 +80,12 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center">
               <Eye className="w-6 h-6 mr-3 text-green-600" />
-              {t('informationWeCollect')}
+              Information We Collect
             </h2>
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('personalInformation')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Personal Information</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
                   <li>• Name, date of birth, and contact information</li>
                   <li>• Family relationships and beneficiary details</li>
@@ -95,7 +95,7 @@ const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('technicalInformation')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Technical Information</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
                   <li>• IP address and device information</li>
                   <li>• Browser type and operating system</li>
@@ -105,7 +105,7 @@ const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('communicationData')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Communication Data</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
                   <li>• Support requests and correspondence</li>
                   <li>• Feedback and survey responses</li>
@@ -119,12 +119,12 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center">
               <Lock className="w-6 h-6 mr-3 text-purple-600" />
-              {t('howWeUseInfo')}
+              How We Use Your Information
             </h2>
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('serviceProvision')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Service Provision</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
                   <li>• Creating and maintaining your digital will</li>
                   <li>• Providing personalized legal guidance</li>
@@ -134,7 +134,7 @@ const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('communication')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Communication</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
                   <li>• Responding to your inquiries and support requests</li>
                   <li>• Sending important service updates and notifications</li>
@@ -143,7 +143,7 @@ const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('improvementAnalytics')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Improvement and Analytics</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
                   <li>• Analyzing usage patterns to improve our services</li>
                   <li>• Developing new features and functionality</li>
@@ -157,45 +157,46 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center">
               <Globe className="w-6 h-6 mr-3 text-blue-600" />
-              {t('gdprRights')}
+              Your GDPR Rights
             </h2>
             
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-4">
               <p className="text-blue-800 text-sm leading-relaxed">
-                {t('gdprDesc')}
+                Under the General Data Protection Regulation (GDPR), you have specific rights regarding 
+                your personal data. We are committed to facilitating the exercise of these rights.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('accessPortability')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">Access & Portability</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>• <strong>Right to Access:</strong> {t('rightToAccess')}</li>
-                  <li>• <strong>Data Portability:</strong> {t('dataPortability')}</li>
+                  <li>• <strong>Right to Access:</strong> Request a copy of all personal data we hold about you</li>
+                  <li>• <strong>Data Portability:</strong> Receive your data in a structured, machine-readable format</li>
                 </ul>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('controlCorrection')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">Control & Correction</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>• <strong>Right to Rectification:</strong> {t('rightToRectification')}</li>
-                  <li>• <strong>Right to Erasure:</strong> {t('rightToErasure')}</li>
+                  <li>• <strong>Right to Rectification:</strong> Correct any inaccurate or incomplete data</li>
+                  <li>• <strong>Right to Erasure:</strong> Request deletion of your personal data</li>
                 </ul>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('processingControl')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">Processing Control</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>• <strong>Right to Restrict:</strong> {t('rightToRestrict')}</li>
-                  <li>• <strong>Right to Object:</strong> {t('rightToObject')}</li>
+                  <li>• <strong>Right to Restrict:</strong> Limit how we process your data</li>
+                  <li>• <strong>Right to Object:</strong> Object to certain types of processing</li>
                 </ul>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('consentManagement')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">Consent Management</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>• <strong>Withdraw Consent:</strong> {t('withdrawConsent')}</li>
-                  <li>• <strong>Complaint Rights:</strong> {t('complaintRights')}</li>
+                  <li>• <strong>Withdraw Consent:</strong> Revoke consent for data processing at any time</li>
+                  <li>• <strong>Complaint Rights:</strong> Lodge complaints with supervisory authorities</li>
                 </ul>
               </div>
             </div>
@@ -205,28 +206,34 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center">
               <Shield className="w-6 h-6 mr-3 text-green-600" />
-              {t('dataSecurityProtection')}
+              Data Security & Protection
             </h2>
             
             <div className="space-y-4">
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">Encryption & Storage</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  {t('encryptionStorage')}
+                  All personal data is encrypted using AES-256 encryption both in transit and at rest. 
+                  We implement zero-knowledge architecture, meaning your sensitive information is encrypted 
+                  on your device before transmission, and we cannot access your unencrypted data.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">Access Controls</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  {t('accessControls')}
+                  Access to personal data is strictly limited to authorized personnel who require it for 
+                  legitimate business purposes. All access is logged and monitored, and employees undergo 
+                  regular security training and background checks.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">Infrastructure Security</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  {t('infrastructureSecurity')}
+                  Our systems are hosted in secure, SOC 2 compliant data centers with physical security 
+                  measures, redundant systems, and regular security audits. We implement multi-factor 
+                  authentication and intrusion detection systems.
                 </p>
               </div>
             </div>
@@ -234,28 +241,28 @@ const PrivacyPolicy = () => {
 
           {/* Data Retention */}
           <section>
-            <h2 className="text-2xl font-bold text-slate-800 mb-4">{t('dataRetention')}</h2>
+            <h2 className="text-2xl font-bold text-slate-800 mb-4">Data Retention</h2>
             
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="text-lg font-semibold text-slate-800 mb-2">Will Documents</h3>
-                  <p className="text-slate-600 text-sm">{t('willDocuments')}</p>
+                  <p className="text-slate-600 text-sm">Retained until you request deletion or account closure</p>
                 </div>
                 
                 <div>
                   <h3 className="text-lg font-semibold text-slate-800 mb-2">Account Data</h3>
-                  <p className="text-slate-600 text-sm">{t('accountData')}</p>
+                  <p className="text-slate-600 text-sm">Retained while your account remains active</p>
                 </div>
                 
                 <div>
                   <h3 className="text-lg font-semibold text-slate-800 mb-2">Analytics Data</h3>
-                  <p className="text-slate-600 text-sm">{t('analyticsData')}</p>
+                  <p className="text-slate-600 text-sm">Anonymized after 24 months</p>
                 </div>
                 
                 <div>
                   <h3 className="text-lg font-semibold text-slate-800 mb-2">Support Records</h3>
-                  <p className="text-slate-600 text-sm">{t('supportRecords')}</p>
+                  <p className="text-slate-600 text-sm">Retained for 3 years for quality assurance</p>
                 </div>
               </div>
             </div>
@@ -263,12 +270,13 @@ const PrivacyPolicy = () => {
 
           {/* Third-Party Sharing */}
           <section>
-            <h2 className="text-2xl font-bold text-slate-800 mb-4">{t('thirdPartySharing')}</h2>
+            <h2 className="text-2xl font-bold text-slate-800 mb-4">Third-Party Sharing</h2>
             
             <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-green-800 mb-3">{t('weNeverSell')}</h3>
+              <h3 className="text-lg font-semibold text-green-800 mb-3">We Never Sell Your Data</h3>
               <p className="text-green-700 text-sm leading-relaxed mb-4">
-                {t('limitedSharing')}
+                We do not sell, rent, or trade your personal information to third parties for marketing 
+                or any other commercial purposes.
               </p>
               
               <div className="space-y-3">
@@ -287,12 +295,12 @@ const PrivacyPolicy = () => {
 
           {/* Contact Information */}
           <section>
-            <h2 className="text-2xl font-bold text-slate-800 mb-4">{t('contactDataProtection')}</h2>
+            <h2 className="text-2xl font-bold text-slate-800 mb-4">Contact & Data Protection</h2>
             
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('privacyOfficer')}</h3>
+                  <h3 className="text-lg font-semibold text-slate-800 mb-2">Privacy Officer</h3>
                   <p className="text-slate-600 text-sm mb-2">For general privacy inquiries:</p>
                   <a href="mailto:privacy@heirguard.com" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
                     privacy@heirguard.com
@@ -300,8 +308,8 @@ const PrivacyPolicy = () => {
                 </div>
                 
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('dataProtectionOfficer')}</h3>
-                  <p className="text-slate-600 text-sm mb-2">{t('gdprRequests')}:</p>
+                  <h3 className="text-lg font-semibold text-slate-800 mb-2">Data Protection Officer</h3>
+                  <p className="text-slate-600 text-sm mb-2">For GDPR-related requests:</p>
                   <a href="mailto:dpo@heirguard.com" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
                     dpo@heirguard.com
                   </a>
@@ -310,7 +318,8 @@ const PrivacyPolicy = () => {
               
               <div className="mt-6 pt-6 border-t border-slate-300">
                 <p className="text-slate-600 text-sm">
-                  <strong>{t('responseTime')}:</strong> {t('responseTime')}
+                  <strong>Response Time:</strong> We will respond to all privacy-related requests within 30 days 
+                  as required by GDPR, or sooner when possible.
                 </p>
               </div>
             </div>
@@ -322,9 +331,12 @@ const PrivacyPolicy = () => {
               <div className="flex items-start space-x-3">
                 <AlertTriangle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-lg font-semibold text-amber-800 mb-2">{t('changesToPolicy')}</h3>
+                  <h3 className="text-lg font-semibold text-amber-800 mb-2">Changes to This Policy</h3>
                   <p className="text-amber-700 text-sm leading-relaxed">
-                    {t('changesToPolicyDesc')}
+                    We may update this Privacy Policy from time to time to reflect changes in our practices 
+                    or legal requirements. We will notify you of any material changes by email and by posting 
+                    the updated policy on our website. Your continued use of our services after such changes 
+                    constitutes acceptance of the updated policy.
                   </p>
                 </div>
               </div>

@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, FileText, Globe, Users, Scale, AlertTriangle } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
 
 const LegalResources = () => {
-  const { t } = useLanguage();
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Header */}
@@ -17,14 +14,14 @@ const LegalResources = () => {
               className="flex items-center space-x-2 text-slate-600 hover:text-slate-800 transition-colors mr-8"
             >
               <ArrowLeft className="w-5 h-5" />
-              <span>{t('backToHome')}</span>
+              <span>Back to Home</span>
             </Link>
             
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center">
                 <FileText className="w-5 h-5 text-white" />
               </div>
-              <span className="text-lg font-semibold text-slate-800">{t('legalResources')}</span>
+              <span className="text-lg font-semibold text-slate-800">Legal Resources</span>
             </div>
           </div>
         </div>
@@ -35,18 +32,19 @@ const LegalResources = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-full px-4 py-2 mb-6">
             <FileText className="w-4 h-4 text-purple-600" />
-            <span className="text-sm font-medium text-slate-700">{t('legalInformation')}</span>
+            <span className="text-sm font-medium text-slate-700">Legal Information</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
-            {t('legalResourcesTitle')}{' '}
+            Legal{' '}
             <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
               Resources
             </span>
           </h1>
           
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            {t('legalResourcesDesc')}
+            Essential legal information to help you understand will creation, inheritance laws, 
+            and estate planning requirements across different jurisdictions.
           </p>
         </div>
 
@@ -55,9 +53,11 @@ const LegalResources = () => {
           <div className="flex items-start space-x-4">
             <AlertTriangle className="w-8 h-8 text-amber-600 flex-shrink-0 mt-1" />
             <div>
-              <h2 className="text-xl font-bold text-amber-800 mb-2">{t('legalDisclaimer2')}</h2>
+              <h2 className="text-xl font-bold text-amber-800 mb-2">Legal Disclaimer</h2>
               <p className="text-amber-700 leading-relaxed">
-                {t('notLegalAdviceDesc')}
+                The information provided here is for educational purposes only and does not constitute legal advice. 
+                Laws vary significantly by jurisdiction and change over time. Always consult with a qualified attorney 
+                in your jurisdiction for specific legal guidance regarding your estate planning needs.
               </p>
             </div>
           </div>
@@ -71,12 +71,12 @@ const LegalResources = () => {
               <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center">
                 <Globe className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-800">{t('willValidityByCountry')}</h2>
+              <h2 className="text-2xl font-bold text-slate-800">Will Validity by Country</h2>
             </div>
 
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('netherlands')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">Netherlands</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
                   <li>• Must be written entirely by hand (holographic) or notarized</li>
                   <li>• Requires two witnesses if not holographic</li>
@@ -86,7 +86,7 @@ const LegalResources = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('germany')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">Germany</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
                   <li>• Holographic wills must be entirely handwritten and signed</li>
                   <li>• Public wills require notarization</li>
@@ -96,7 +96,7 @@ const LegalResources = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('unitedKingdom')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">United Kingdom</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
                   <li>• Must be in writing and signed by testator</li>
                   <li>• Requires two witnesses present simultaneously</li>
@@ -106,7 +106,7 @@ const LegalResources = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('france')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">France</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
                   <li>• Holographic wills must be handwritten, dated, and signed</li>
                   <li>• Authentic wills require notary and two witnesses</li>
@@ -123,12 +123,12 @@ const LegalResources = () => {
               <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-500 rounded-xl flex items-center justify-center">
                 <FileText className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-800">{t('revokingPreviousWills')}</h2>
+              <h2 className="text-2xl font-bold text-slate-800">Revoking Previous Wills</h2>
             </div>
 
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('generalPrinciples')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">General Principles</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
                   <li>• A new will typically revokes all previous wills automatically</li>
                   <li>• Express revocation clauses provide additional clarity</li>
@@ -138,7 +138,7 @@ const LegalResources = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('bestPractices')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">Best Practices</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
                   <li>• Include explicit revocation language in new wills</li>
                   <li>• Destroy physical copies of old wills when possible</li>
@@ -148,7 +148,7 @@ const LegalResources = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('commonMistakes')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">Common Mistakes</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
                   <li>• Failing to include revocation clauses</li>
                   <li>• Assuming verbal revocations are sufficient</li>
@@ -158,7 +158,7 @@ const LegalResources = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('legalRequirements')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">Legal Requirements</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
                   <li>• Revocation must meet same formalities as will creation</li>
                   <li>• Some jurisdictions require witness signatures for revocation</li>
@@ -175,12 +175,12 @@ const LegalResources = () => {
               <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
                 <Users className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-800">{t('guardianshipLaws')}</h2>
+              <h2 className="text-2xl font-bold text-slate-800">Guardianship Laws in Europe</h2>
             </div>
 
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('appointmentOfGuardians')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">Appointment of Guardians</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
                   <li>• Parents can nominate guardians in their wills</li>
                   <li>• Courts have final authority over guardian appointments</li>
@@ -200,7 +200,7 @@ const LegalResources = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('crossBorderConsiderations')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">Cross-Border Considerations</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
                   <li>• EU regulations facilitate cross-border recognition</li>
                   <li>• Hague Convention provides international framework</li>
@@ -210,7 +210,7 @@ const LegalResources = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('specialCircumstances')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">Special Circumstances</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
                   <li>• Children with special needs may require specialized guardians</li>
                   <li>• Temporary guardianship arrangements for emergencies</li>
@@ -227,12 +227,12 @@ const LegalResources = () => {
               <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center">
                 <Scale className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-800">{t('crossBorderInheritance')}</h2>
+              <h2 className="text-2xl font-bold text-slate-800">Cross-Border Inheritance Guidelines</h2>
             </div>
 
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('euSuccessionRegulation')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">EU Succession Regulation</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
                   <li>• Applies to deaths after August 17, 2015</li>
                   <li>• Law of habitual residence generally applies</li>
@@ -242,7 +242,7 @@ const LegalResources = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('keyConsiderations')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">Key Considerations</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
                   <li>• Multiple tax jurisdictions may apply</li>
                   <li>• Double taxation treaties provide relief</li>
@@ -252,7 +252,7 @@ const LegalResources = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('commonChallenges')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">Common Challenges</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
                   <li>• Conflicting forced heirship rules</li>
                   <li>• Different probate procedures by country</li>
@@ -262,7 +262,7 @@ const LegalResources = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('planningStrategies')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">Planning Strategies</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
                   <li>• Choose applicable law explicitly in will</li>
                   <li>• Consider trust structures for asset protection</li>
@@ -276,25 +276,26 @@ const LegalResources = () => {
 
         {/* Additional Resources */}
         <div className="mt-16 bg-gradient-to-r from-slate-800 to-slate-900 rounded-3xl p-8 md:p-12 text-white text-center">
-          <h2 className="text-2xl font-bold mb-6">{t('needProfessionalAdvice')}</h2>
+          <h2 className="text-2xl font-bold mb-6">Need Professional Legal Advice?</h2>
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
-            {t('professionalAdviceDesc')}
+            While these resources provide general information, every situation is unique. 
+            For specific legal advice tailored to your circumstances, consult with qualified legal professionals.
           </p>
           
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white/10 border border-white/20 rounded-xl p-4">
               <h3 className="font-semibold mb-2">Find Local Attorneys</h3>
-              <p className="text-slate-300 text-sm">{t('findLocalAttorneys')}</p>
+              <p className="text-slate-300 text-sm">Contact your local bar association for referrals to estate planning specialists</p>
             </div>
             
             <div className="bg-white/10 border border-white/20 rounded-xl p-4">
               <h3 className="font-semibold mb-2">Legal Aid Services</h3>
-              <p className="text-slate-300 text-sm">{t('legalAidServices')}</p>
+              <p className="text-slate-300 text-sm">Many jurisdictions offer free or low-cost legal assistance for basic estate planning</p>
             </div>
             
             <div className="bg-white/10 border border-white/20 rounded-xl p-4">
               <h3 className="font-semibold mb-2">Online Legal Resources</h3>
-              <p className="text-slate-300 text-sm">{t('onlineLegalResources')}</p>
+              <p className="text-slate-300 text-sm">Government websites often provide official guidance on inheritance laws and procedures</p>
             </div>
           </div>
         </div>

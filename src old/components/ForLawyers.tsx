@@ -4,7 +4,9 @@ import { ArrowLeft, Scale, Users, Building, CheckCircle, Mail, Phone, FileText, 
 import { useLanguage } from '../context/LanguageContext';
 
 const ForLawyers = () => {
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
+  
+  console.log('ForLawyers: Current language is:', currentLanguage);
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -34,6 +36,7 @@ const ForLawyers = () => {
 
   const handlePricingClick = (planName: string) => {
     setFormData(prev => ({ ...prev, selectedPlan: planName }));
+    // Scroll to form
     document.getElementById('partnership-application')?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -41,6 +44,7 @@ const ForLawyers = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Create mailto link with form data
     const subject = encodeURIComponent(`Legal Partnership Application - ${formData.fullName}`);
     const body = encodeURIComponent(`
 Legal Partnership Application
@@ -389,7 +393,7 @@ Application submitted on: ${new Date().toLocaleString()}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="fullName" className="block text-sm font-semibold text-slate-700 mb-2">
-                  {t('fullName')} *
+                  Full Name *
                 </label>
                 <input
                   type="text"
@@ -423,7 +427,7 @@ Application submitted on: ${new Date().toLocaleString()}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
-                  {t('emailAddress')} *
+                  Email Address *
                 </label>
                 <input
                   type="email"

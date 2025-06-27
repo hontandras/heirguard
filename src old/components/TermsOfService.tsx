@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, FileText, AlertTriangle, Shield, Scale, Users } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
 
 const TermsOfService = () => {
-  const { t } = useLanguage();
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Header */}
@@ -17,14 +14,14 @@ const TermsOfService = () => {
               className="flex items-center space-x-2 text-slate-600 hover:text-slate-800 transition-colors mr-8"
             >
               <ArrowLeft className="w-5 h-5" />
-              <span>{t('backToHome')}</span>
+              <span>Back to Home</span>
             </Link>
             
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center">
                 <Scale className="w-5 h-5 text-white" />
               </div>
-              <span className="text-lg font-semibold text-slate-800">{t('termsOfService')}</span>
+              <span className="text-lg font-semibold text-slate-800">Terms of Service</span>
             </div>
           </div>
         </div>
@@ -35,25 +32,26 @@ const TermsOfService = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-full px-4 py-2 mb-6">
             <Scale className="w-4 h-4 text-purple-600" />
-            <span className="text-sm font-medium text-slate-700">{t('termsOfService')}</span>
+            <span className="text-sm font-medium text-slate-700">Terms of Service</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
-            {t('termsOfServiceTitle')}{' '}
+            Terms of{' '}
             <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
               Service
             </span>
           </h1>
           
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            {t('termsDesc')}
+            These terms govern your use of HeirGuard's digital will creation platform and services. 
+            Please read them carefully.
           </p>
         </div>
 
         {/* Last Updated */}
         <div className="bg-purple-50 border border-purple-200 rounded-2xl p-4 mb-8 text-center">
           <p className="text-purple-800 text-sm">
-            <strong>{t('lastUpdated')}:</strong> January 2024 • <strong>{t('effectiveDate')}:</strong> January 2024
+            <strong>Last Updated:</strong> January 2024 • <strong>Effective Date:</strong> January 2024
           </p>
         </div>
 
@@ -64,10 +62,11 @@ const TermsOfService = () => {
           <section>
             <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center">
               <FileText className="w-6 h-6 mr-3 text-purple-600" />
-              {t('acceptanceOfTerms')}
+              Acceptance of Terms
             </h2>
             <p className="text-slate-600 leading-relaxed mb-4">
-              {t('acceptanceText')}
+              By accessing or using HeirGuard's services, you agree to be bound by these Terms of Service 
+              and our Privacy Policy. If you do not agree to these terms, please do not use our services.
             </p>
             <p className="text-slate-600 leading-relaxed">
               These terms constitute a legally binding agreement between you and HeirGuard (operated by 
@@ -80,12 +79,12 @@ const TermsOfService = () => {
           <section>
             <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center">
               <Users className="w-6 h-6 mr-3 text-blue-600" />
-              {t('serviceDescription')}
+              Service Description
             </h2>
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('whatWeProvide')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">What We Provide</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
                   <li>• AI-powered digital will creation platform</li>
                   <li>• Personalized legal guidance and document generation</li>
@@ -95,7 +94,7 @@ const TermsOfService = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('developmentStatus')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Development Status</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   HeirGuard is currently in development. The platform is provided as a demonstration 
                   and testing environment. Full security features and legal compliance measures are 
@@ -111,11 +110,11 @@ const TermsOfService = () => {
               <div className="flex items-start space-x-3">
                 <AlertTriangle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
                 <div>
-                  <h2 className="text-xl font-bold text-amber-800 mb-3">{t('importantDisclaimer')}</h2>
+                  <h2 className="text-xl font-bold text-amber-800 mb-3">Important Service Disclaimer</h2>
                   
                   <div className="space-y-3 text-amber-700 text-sm">
                     <div>
-                      <h3 className="font-semibold mb-1">{t('notLegalAdvice')}</h3>
+                      <h3 className="font-semibold mb-1">Not Legal Advice</h3>
                       <p>
                         HeirGuard provides technology tools and general information but does not provide 
                         legal advice. Our service does not replace consultation with qualified legal professionals.
@@ -149,12 +148,12 @@ const TermsOfService = () => {
           <section>
             <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center">
               <Users className="w-6 h-6 mr-3 text-green-600" />
-              {t('userResponsibilities')}
+              User Responsibilities
             </h2>
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('accountSecurity')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Account Security</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
                   <li>• Maintain the confidentiality of your account credentials</li>
                   <li>• Notify us immediately of any unauthorized access</li>
@@ -164,7 +163,7 @@ const TermsOfService = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('accurateInformation')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Accurate Information</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
                   <li>• Provide accurate and complete information</li>
                   <li>• Update your information when circumstances change</li>
@@ -174,7 +173,7 @@ const TermsOfService = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('prohibitedUses')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Prohibited Uses</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
                   <li>• Using the service for illegal or fraudulent purposes</li>
                   <li>• Attempting to circumvent security measures</li>
@@ -189,13 +188,13 @@ const TermsOfService = () => {
           <section>
             <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center">
               <Shield className="w-6 h-6 mr-3 text-red-600" />
-              {t('liabilityLimitations')}
+              Liability Limitations
             </h2>
             
             <div className="bg-red-50 border border-red-200 rounded-xl p-6">
               <div className="space-y-4 text-red-700 text-sm">
                 <div>
-                  <h3 className="font-semibold text-red-800 mb-2">{t('serviceLimitations')}</h3>
+                  <h3 className="font-semibold text-red-800 mb-2">Service Limitations</h3>
                   <p className="leading-relaxed">
                     HeirGuard provides technology tools and general guidance but cannot guarantee that 
                     generated documents will meet all legal requirements in every jurisdiction. Users 
@@ -204,7 +203,7 @@ const TermsOfService = () => {
                 </div>
                 
                 <div>
-                  <h3 className="font-semibold text-red-800 mb-2">{t('limitationOfLiability')}</h3>
+                  <h3 className="font-semibold text-red-800 mb-2">Limitation of Liability</h3>
                   <p className="leading-relaxed">
                     To the maximum extent permitted by law, HeirGuard and its affiliates shall not be 
                     liable for any indirect, incidental, special, consequential, or punitive damages, 
@@ -214,7 +213,7 @@ const TermsOfService = () => {
                 </div>
                 
                 <div>
-                  <h3 className="font-semibold text-red-800 mb-2">{t('maximumLiability')}</h3>
+                  <h3 className="font-semibold text-red-800 mb-2">Maximum Liability</h3>
                   <p className="leading-relaxed">
                     Our total liability to you for any claims arising from or related to our services 
                     shall not exceed the amount you have paid us for the services in the twelve months 
@@ -229,12 +228,12 @@ const TermsOfService = () => {
           <section>
             <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center">
               <Shield className="w-6 h-6 mr-3 text-blue-600" />
-              {t('dataProtectionPrivacy')}
+              Data Protection & Privacy
             </h2>
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('dataCollectionUse')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Data Collection & Use</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   We collect and process personal data as described in our Privacy Policy. By using 
                   our services, you consent to such collection and processing in accordance with 
@@ -243,7 +242,7 @@ const TermsOfService = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('securityMeasures')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Security Measures</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   We implement appropriate technical and organizational measures to protect your personal 
                   data. However, no method of transmission or storage is 100% secure, and we cannot 
@@ -252,7 +251,7 @@ const TermsOfService = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('dataRetention')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Data Retention</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   We retain your personal data only as long as necessary for the purposes outlined in 
                   our Privacy Policy or as required by law. You may request deletion of your data 
@@ -264,11 +263,11 @@ const TermsOfService = () => {
 
           {/* Intellectual Property */}
           <section>
-            <h2 className="text-2xl font-bold text-slate-800 mb-4">{t('intellectualProperty')}</h2>
+            <h2 className="text-2xl font-bold text-slate-800 mb-4">Intellectual Property</h2>
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('ourRights')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Our Rights</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   All content, features, and functionality of our services, including but not limited 
                   to text, graphics, logos, software, and design, are owned by HeirGuard or our licensors 
@@ -277,7 +276,7 @@ const TermsOfService = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('yourContent')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Your Content</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   You retain ownership of the personal information and content you provide to our services. 
                   By using our services, you grant us a limited license to use this information to provide 
@@ -286,7 +285,7 @@ const TermsOfService = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('generatedDocuments')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Generated Documents</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   Documents generated through our platform belong to you. However, the underlying 
                   technology, templates, and processes remain our intellectual property.
@@ -297,12 +296,12 @@ const TermsOfService = () => {
 
           {/* Termination */}
           <section>
-            <h2 className="text-2xl font-bold text-slate-800 mb-4">{t('termination')}</h2>
+            <h2 className="text-2xl font-bold text-slate-800 mb-4">Termination</h2>
             
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
               <div className="space-y-4">
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('byYou')}</h3>
+                  <h3 className="text-lg font-semibold text-slate-800 mb-2">By You</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
                     You may terminate your account at any time by contacting us or using account 
                     deletion features when available. Upon termination, your access to our services 
@@ -311,7 +310,7 @@ const TermsOfService = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('byUs')}</h3>
+                  <h3 className="text-lg font-semibold text-slate-800 mb-2">By Us</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
                     We may terminate or suspend your account if you violate these terms, engage in 
                     fraudulent activity, or for other legitimate business reasons. We will provide 
@@ -320,7 +319,7 @@ const TermsOfService = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('effectOfTermination')}</h3>
+                  <h3 className="text-lg font-semibold text-slate-800 mb-2">Effect of Termination</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
                     Upon termination, your right to use our services ceases immediately. Provisions 
                     regarding liability limitations, intellectual property, and dispute resolution 
@@ -333,11 +332,11 @@ const TermsOfService = () => {
 
           {/* Governing Law */}
           <section>
-            <h2 className="text-2xl font-bold text-slate-800 mb-4">{t('governingLawDisputes')}</h2>
+            <h2 className="text-2xl font-bold text-slate-800 mb-4">Governing Law & Disputes</h2>
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('applicableLaw')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Applicable Law</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   These terms are governed by and construed in accordance with the laws of the Netherlands, 
                   without regard to conflict of law principles. Any disputes arising from these terms 
@@ -346,7 +345,7 @@ const TermsOfService = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('disputeResolution')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Dispute Resolution</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   We encourage resolving disputes through direct communication. If informal resolution 
                   is not possible, disputes may be resolved through binding arbitration or court proceedings 
@@ -358,12 +357,12 @@ const TermsOfService = () => {
 
           {/* Contact Information */}
           <section>
-            <h2 className="text-2xl font-bold text-slate-800 mb-4">{t('contactInformation')}</h2>
+            <h2 className="text-2xl font-bold text-slate-800 mb-4">Contact Information</h2>
             
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
               <div className="space-y-3">
                 <div>
-                  <h3 className="text-lg font-semibold text-blue-800 mb-1">{t('legalQuestions2')}</h3>
+                  <h3 className="text-lg font-semibold text-blue-800 mb-1">Legal Questions</h3>
                   <p className="text-blue-700 text-sm">
                     For questions about these terms or legal matters: 
                     <a href="mailto:legal@heirguard.com" className="ml-1 underline hover:no-underline">
@@ -373,7 +372,7 @@ const TermsOfService = () => {
                 </div>
                 
                 <div>
-                  <h3 className="text-lg font-semibold text-blue-800 mb-1">{t('generalSupport')}</h3>
+                  <h3 className="text-lg font-semibold text-blue-800 mb-1">General Support</h3>
                   <p className="text-blue-700 text-sm">
                     For general inquiries and support: 
                     <a href="mailto:hont@pertexholdings.com" className="ml-1 underline hover:no-underline">
@@ -384,7 +383,7 @@ const TermsOfService = () => {
                 
                 <div className="pt-3 border-t border-blue-300">
                   <p className="text-blue-700 text-sm">
-                    <strong>HeirGuard</strong> {t('heirGuardOperated')}<br />
+                    <strong>HeirGuard</strong> is operated by Pertex Holdings<br />
                     Registered in the Netherlands
                   </p>
                 </div>
@@ -398,9 +397,12 @@ const TermsOfService = () => {
               <div className="flex items-start space-x-3">
                 <AlertTriangle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-lg font-semibold text-amber-800 mb-2">{t('changesToTerms')}</h3>
+                  <h3 className="text-lg font-semibold text-amber-800 mb-2">Changes to These Terms</h3>
                   <p className="text-amber-700 text-sm leading-relaxed">
-                    {t('changesToTermsDesc')}
+                    We may update these Terms of Service from time to time to reflect changes in our 
+                    services, legal requirements, or business practices. We will notify you of material 
+                    changes by email and by posting the updated terms on our website. Your continued 
+                    use of our services after such changes constitutes acceptance of the updated terms.
                   </p>
                 </div>
               </div>

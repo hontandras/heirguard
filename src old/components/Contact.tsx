@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Mail, Phone, MapPin, Clock, Send, MessageCircle, HelpCircle, CheckCircle, ExternalLink } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
 
 const Contact = () => {
-  const { t } = useLanguage();
-  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,6 +26,7 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Create mailto link with form data
     const subject = encodeURIComponent(`Contact Form Submission - ${formData.subject}`);
     const body = encodeURIComponent(`
 Contact Form Submission
@@ -48,6 +46,7 @@ Date: ${new Date().toLocaleString()}
     
     window.location.href = `mailto:hont@pertexholdings.com?subject=${subject}&body=${body}`;
 
+    // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -63,16 +62,16 @@ Date: ${new Date().toLocaleString()}
           <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="w-10 h-10 text-white" />
           </div>
-          <h1 className="text-3xl font-bold text-slate-800 mb-4">{t('messageSent')}</h1>
+          <h1 className="text-3xl font-bold text-slate-800 mb-4">Message Sent!</h1>
           <p className="text-lg text-slate-600 mb-8">
-            {t('thankYou')} We'll get back to you within 24 hours during business days.
+            Thank you for contacting us. We'll get back to you within 24 hours during business days.
           </p>
           <Link
             to="/"
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
           >
             <ArrowLeft className="mr-2 w-4 h-4" />
-            {t('backToHome')}
+            Back to Home
           </Link>
         </div>
       </div>
@@ -90,14 +89,14 @@ Date: ${new Date().toLocaleString()}
               className="flex items-center space-x-2 text-slate-600 hover:text-slate-800 transition-colors mr-8"
             >
               <ArrowLeft className="w-5 h-5" />
-              <span>{t('backToHome')}</span>
+              <span>Back to Home</span>
             </Link>
             
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
                 <MessageCircle className="w-5 h-5 text-white" />
               </div>
-              <span className="text-lg font-semibold text-slate-800">{t('contactUs')}</span>
+              <span className="text-lg font-semibold text-slate-800">Contact Us</span>
             </div>
           </div>
         </div>
@@ -109,7 +108,7 @@ Date: ${new Date().toLocaleString()}
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-full px-4 py-2 mb-6">
             <MessageCircle className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-medium text-slate-700">{t('getInTouch')}</span>
+            <span className="text-sm font-medium text-slate-700">Get in Touch</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
@@ -130,7 +129,7 @@ Date: ${new Date().toLocaleString()}
           <div className="lg:col-span-1 space-y-6">
             {/* Contact Methods */}
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl border border-slate-200 p-8 shadow-xl">
-              <h2 className="text-2xl font-bold text-slate-800 mb-6">{t('getInTouch')}</h2>
+              <h2 className="text-2xl font-bold text-slate-800 mb-6">Get in Touch</h2>
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
@@ -138,7 +137,7 @@ Date: ${new Date().toLocaleString()}
                     <Mail className="w-5 h-5 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-800 mb-1">{t('emailSupport')}</h3>
+                    <h3 className="font-semibold text-slate-800 mb-1">Email Support</h3>
                     <p className="text-slate-600 text-sm mb-2">For general inquiries and support</p>
                     <a href="mailto:hont@pertexholdings.com" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
                       hont@pertexholdings.com
@@ -151,7 +150,7 @@ Date: ${new Date().toLocaleString()}
                     <Phone className="w-5 h-5 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-800 mb-1">{t('phoneSupport')}</h3>
+                    <h3 className="font-semibold text-slate-800 mb-1">Phone Support</h3>
                     <p className="text-slate-600 text-sm mb-2">Monday - Friday, 9 AM - 6 PM CET</p>
                     <a href="tel:+36308508365" className="text-green-600 hover:text-green-700 text-sm font-medium">
                       +36 30 850 8365
@@ -164,7 +163,7 @@ Date: ${new Date().toLocaleString()}
                     <MapPin className="w-5 h-5 text-purple-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-800 mb-1">{t('officeAddress')}</h3>
+                    <h3 className="font-semibold text-slate-800 mb-1">Office Address</h3>
                     <p className="text-slate-600 text-sm">
                       Herengracht 123<br />
                       1015 BG Amsterdam<br />
@@ -178,7 +177,7 @@ Date: ${new Date().toLocaleString()}
                     <Clock className="w-5 h-5 text-orange-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-800 mb-1">{t('businessHours')}</h3>
+                    <h3 className="font-semibold text-slate-800 mb-1">Business Hours</h3>
                     <p className="text-slate-600 text-sm">
                       Monday - Friday: 9:00 AM - 6:00 PM CET<br />
                       Saturday: 10:00 AM - 2:00 PM CET<br />
@@ -216,7 +215,7 @@ Date: ${new Date().toLocaleString()}
           <div className="lg:col-span-2">
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl border border-slate-200 p-8 md:p-12 shadow-xl">
               <div className="mb-8">
-                <h2 className="text-3xl font-bold text-slate-800 mb-2">{t('sendMessage')}</h2>
+                <h2 className="text-3xl font-bold text-slate-800 mb-2">Send Us a Message</h2>
                 <p className="text-slate-600">We'll get back to you within 24 hours during business days</p>
               </div>
 
@@ -224,7 +223,7 @@ Date: ${new Date().toLocaleString()}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
-                      {t('fullName')} *
+                      Full Name *
                     </label>
                     <input
                       type="text"
@@ -240,7 +239,7 @@ Date: ${new Date().toLocaleString()}
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
-                      {t('emailAddress')} *
+                      Email Address *
                     </label>
                     <input
                       type="email"
@@ -258,7 +257,7 @@ Date: ${new Date().toLocaleString()}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="category" className="block text-sm font-semibold text-slate-700 mb-2">
-                      {t('category')} *
+                      Category *
                     </label>
                     <select
                       id="category"
@@ -268,20 +267,20 @@ Date: ${new Date().toLocaleString()}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                     >
-                      <option value="">{t('selectCategory')}</option>
-                      <option value="general">{t('generalInquiry')}</option>
-                      <option value="technical">{t('technicalSupport')}</option>
-                      <option value="legal">{t('legalQuestions')}</option>
-                      <option value="partnership">{t('partnershipInquiry')}</option>
-                      <option value="billing">{t('billingPayments')}</option>
-                      <option value="privacy">{t('privacySecurity')}</option>
-                      <option value="feedback">{t('feedbackSuggestions')}</option>
+                      <option value="">Select Category</option>
+                      <option value="general">General Inquiry</option>
+                      <option value="technical">Technical Support</option>
+                      <option value="legal">Legal Questions</option>
+                      <option value="partnership">Partnership Inquiry</option>
+                      <option value="billing">Billing & Payments</option>
+                      <option value="privacy">Privacy & Security</option>
+                      <option value="feedback">Feedback & Suggestions</option>
                     </select>
                   </div>
 
                   <div>
                     <label htmlFor="subject" className="block text-sm font-semibold text-slate-700 mb-2">
-                      {t('subject')} *
+                      Subject *
                     </label>
                     <input
                       type="text"
@@ -298,7 +297,7 @@ Date: ${new Date().toLocaleString()}
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
-                    {t('message')} *
+                    Message *
                   </label>
                   <textarea
                     id="message"
@@ -326,7 +325,7 @@ Date: ${new Date().toLocaleString()}
                     ) : (
                       <>
                         <Send className="mr-2 w-5 h-5" />
-                        {t('sendMessage')}
+                        Send Message
                       </>
                     )}
                   </button>
@@ -335,7 +334,7 @@ Date: ${new Date().toLocaleString()}
 
               <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-xl">
                 <p className="text-sm text-blue-800">
-                  <strong>{t('responseTime')}:</strong> We typically respond to all inquiries within 24 hours during business days. 
+                  <strong>Response Time:</strong> We typically respond to all inquiries within 24 hours during business days. 
                   For urgent technical issues, please call our support line directly.
                 </p>
               </div>

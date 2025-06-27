@@ -4,8 +4,10 @@ import { ArrowLeft, Heart, Globe, Mail, Building, CheckCircle, Send, Users, Tren
 import { useLanguage } from '../context/LanguageContext';
 
 const ForFoundations = () => {
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
   
+  console.log('ForFoundations: Current language is:', currentLanguage);
+
   const [formData, setFormData] = useState({
     organizationName: '',
     website: '',
@@ -23,13 +25,15 @@ const ForFoundations = () => {
   const [websiteError, setWebsiteError] = useState('');
 
   const validateWebsite = (url: string): boolean => {
-    if (!url) return true;
+    if (!url) return true; // Allow empty for optional field
     
+    // Check if URL starts with http:// or https://
     if (!url.match(/^https?:\/\//)) {
       setWebsiteError('Website URL must start with http:// or https://');
       return false;
     }
     
+    // Basic URL validation pattern
     const urlPattern = /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
     
     if (!urlPattern.test(url)) {
@@ -56,18 +60,21 @@ const ForFoundations = () => {
 
   const handlePricingClick = (planName: string) => {
     setFormData(prev => ({ ...prev, selectedPlan: planName }));
+    // Scroll to form
     document.getElementById('partnership-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Validate website before submission
     if (formData.website && !validateWebsite(formData.website)) {
       return;
     }
     
     setIsSubmitting(true);
 
+    // Create mailto link with form data
     const subject = encodeURIComponent(`Foundation Partnership Application - ${formData.organizationName}`);
     const body = encodeURIComponent(`
 Foundation Partnership Application
@@ -99,7 +106,7 @@ Application submitted on: ${new Date().toLocaleString()}
           <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="w-10 h-10 text-white" />
           </div>
-          <h1 className="text-3xl font-bold text-slate-800 mb-4">{t('thankYou')}</h1>
+          <h1 className="text-3xl font-bold text-slate-800 mb-4">Thank You!</h1>
           <p className="text-lg text-slate-600 mb-8">
             We've received your submission. Your email client should have opened with your partnership application. 
             We'll be in touch within 48 hours to discuss partnership opportunities.
@@ -540,7 +547,7 @@ Application submitted on: ${new Date().toLocaleString()}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="country" className="block text-sm font-semibold text-slate-700 mb-2">
-                  {t('country')} of Registration *
+                  Country of Registration *
                 </label>
                 <input
                   type="text"
@@ -556,7 +563,7 @@ Application submitted on: ${new Date().toLocaleString()}
 
               <div>
                 <label htmlFor="contactEmail" className="block text-sm font-semibold text-slate-700 mb-2">
-                  {t('contact')} Email *
+                  Contact Email *
                 </label>
                 <input
                   type="email"
@@ -628,7 +635,7 @@ Application submitted on: ${new Date().toLocaleString()}
               <Mail className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="text-sm text-blue-800">
-                  <strong>Questions about partnership?</strong> {t('contact')} our team directly at{' '}
+                  <strong>Questions about partnership?</strong> Contact our team directly at{' '}
                   <a href="mailto:hont@pertexholdings.com" className="underline hover:no-underline">
                     hont@pertexholdings.com
                   </a>

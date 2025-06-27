@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, DollarSign, MessageCircle, Mail } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
 
 const Pricing = () => {
-  const { t } = useLanguage();
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Header */}
@@ -17,14 +14,14 @@ const Pricing = () => {
               className="flex items-center space-x-2 text-slate-600 hover:text-slate-800 transition-colors mr-8"
             >
               <ArrowLeft className="w-5 h-5" />
-              <span>{t('backToHome')}</span>
+              <span>Back to Home</span>
             </Link>
             
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg flex items-center justify-center">
                 <DollarSign className="w-5 h-5 text-white" />
               </div>
-              <span className="text-lg font-semibold text-slate-800">{t('pricing')}</span>
+              <span className="text-lg font-semibold text-slate-800">Pricing</span>
             </div>
           </div>
         </div>
@@ -39,9 +36,9 @@ const Pricing = () => {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
-            {t('pricingPolicy')}{' '}
+            Pricing Policy{' '}
             <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-              {t('inDevelopment')}
+              In Development
             </span>
           </h1>
         </div>
@@ -51,14 +48,15 @@ const Pricing = () => {
             <MessageCircle className="w-10 h-10 text-white" />
           </div>
           
-          <h2 className="text-2xl font-bold text-slate-800 mb-6">{t('pricingBeingDefined')}</h2>
+          <h2 className="text-2xl font-bold text-slate-800 mb-6">Our Pricing Policy is Currently Being Defined</h2>
           
           <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto">
-            {t('demoVersion')}
+            This is a demo version of the product aimed to meet your real needs. We're working hard to create 
+            a fair and transparent pricing structure that provides exceptional value for our users.
           </p>
 
           <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 mb-8">
-            <h3 className="text-lg font-semibold text-blue-800 mb-3">{t('helpUsShape')}</h3>
+            <h3 className="text-lg font-semibold text-blue-800 mb-3">Help Us Shape Our Pricing</h3>
             <p className="text-blue-700 text-sm leading-relaxed">
               Your feedback is invaluable in helping us create pricing that works for everyone. 
               Please fill out our short feedback survey and we'll notify you once the live version launches.
@@ -73,7 +71,7 @@ const Pricing = () => {
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <MessageCircle className="mr-2 w-5 h-5" />
-              {t('fillFeedbackSurvey')}
+              Fill Out Feedback Survey
             </a>
             
             <Link
@@ -81,13 +79,14 @@ const Pricing = () => {
               className="inline-flex items-center px-8 py-4 bg-white/80 backdrop-blur-sm text-slate-700 font-semibold rounded-2xl border border-slate-300 hover:bg-white hover:border-slate-400 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <Mail className="mr-2 w-5 h-5" />
-              {t('contactDirectly')}
+              Contact Us Directly
             </Link>
           </div>
 
           <div className="mt-8 p-4 bg-green-50 border border-green-200 rounded-xl">
             <p className="text-sm text-green-800">
-              <strong>{t('earlyAccess')}</strong>
+              <strong>Early Access:</strong> Survey participants will receive priority access and special pricing 
+              when we launch the full version of HeirGuard.
             </p>
           </div>
         </div>
