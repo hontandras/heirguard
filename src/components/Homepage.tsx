@@ -175,7 +175,17 @@ const Homepage = () => {
           </div>
 
           <div className="border-t border-slate-700 mt-12 pt-8 text-center text-slate-400">
-            <p>&copy; {new Date().getFullYear()} HeirGuard by Pertex Holdings. {t('allRightsReserved')}</p>
+            <p className="mb-2">&copy; {new Date().getFullYear()} HeirGuard by Pertex Holdings. {t('allRightsReserved')}</p>
+            <p className="text-sm">
+              <a 
+                href="https://bolt.new" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-white transition-colors inline-flex items-center"
+              >
+                Built with Bolt
+              </a>
+            </p>
           </div>
         </div>
       </footer>
