@@ -212,7 +212,7 @@ ${t('applicationSubmittedOn')}: ${new Date().toLocaleString()}
               </div>
               <h3 className="text-xl font-semibold text-slate-800 mb-4">{t('joinOurNetwork')}</h3>
               <p className="text-slate-600 leading-relaxed">
-                Apply to join our network of trusted charitable organizations. We verify all partners to ensure legitimacy and maintain donor trust.
+                {t('foundationsJoinNetworkDesc')}
               </p>
             </div>
 
@@ -222,7 +222,7 @@ ${t('applicationSubmittedOn')}: ${new Date().toLocaleString()}
               </div>
               <h3 className="text-xl font-semibold text-slate-800 mb-4">{t('getListed')}</h3>
               <p className="text-slate-600 leading-relaxed">
-                Your organization appears as a donation option for users creating their wills. We highlight your mission and impact to potential donors.
+                {t('foundationsGetListedDesc')}
               </p>
             </div>
 
@@ -232,7 +232,7 @@ ${t('applicationSubmittedOn')}: ${new Date().toLocaleString()}
               </div>
               <h3 className="text-xl font-semibold text-slate-800 mb-4">{t('receiveDonations')}</h3>
               <p className="text-slate-600 leading-relaxed">
-                When users include your organization in their wills, you'll receive notifications and eventually the legacy donations when the time comes.
+                {t('foundationsReceiveDonationsDesc')}
               </p>
             </div>
           </div>
@@ -449,7 +449,7 @@ ${t('applicationSubmittedOn')}: ${new Date().toLocaleString()}
         <section id="partnership-form" className="bg-white/80 backdrop-blur-sm rounded-3xl border border-slate-200 p-8 md:p-12 shadow-xl">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-slate-800 mb-2">{t('applyForPartnership')}</h2>
-            <p className="text-slate-600">Join our network of trusted charitable organizations and receive legacy donations through our platform.</p>
+            <p className="text-slate-600">{t('foundationsJoinNetworkDesc')}</p>
             {formData.selectedPlan && (
               <div className="mt-4 inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-lg">
                 <span className="text-sm font-medium">{t('selectedPlan')}: {formData.selectedPlan}</span>
