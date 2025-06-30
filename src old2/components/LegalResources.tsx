@@ -41,7 +41,7 @@ const LegalResources = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
             {t('legalResourcesTitle')}{' '}
             <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              {t('resources')}
+              Resources
             </span>
           </h1>
           
@@ -78,28 +78,40 @@ const LegalResources = () => {
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('netherlands')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>{t('netherlandsWillRequirements')}</li>
+                  <li>• Must be written entirely by hand (holographic) or notarized</li>
+                  <li>• Requires two witnesses if not holographic</li>
+                  <li>• Forced heirship rules protect spouse and children</li>
+                  <li>• Must be in Dutch or officially translated</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('germany')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>{t('germanyWillRequirements')}</li>
+                  <li>• Holographic wills must be entirely handwritten and signed</li>
+                  <li>• Public wills require notarization</li>
+                  <li>• Pflichtteil (forced share) protects close relatives</li>
+                  <li>• Joint wills allowed for married couples</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('unitedKingdom')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>{t('ukWillRequirements')}</li>
+                  <li>• Must be in writing and signed by testator</li>
+                  <li>• Requires two witnesses present simultaneously</li>
+                  <li>• No forced heirship - full testamentary freedom</li>
+                  <li>• Different rules apply in Scotland</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('france')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>{t('franceWillRequirements')}</li>
+                  <li>• Holographic wills must be handwritten, dated, and signed</li>
+                  <li>• Authentic wills require notary and two witnesses</li>
+                  <li>• Réserve héréditaire protects children and spouse</li>
+                  <li>• Registration with central registry recommended</li>
                 </ul>
               </div>
             </div>
@@ -118,28 +130,40 @@ const LegalResources = () => {
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('generalPrinciples')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>{t('generalRevocationPrinciples')}</li>
+                  <li>• A new will typically revokes all previous wills automatically</li>
+                  <li>• Express revocation clauses provide additional clarity</li>
+                  <li>• Physical destruction of a will can constitute revocation</li>
+                  <li>• Marriage often revokes existing wills in many jurisdictions</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('bestPractices')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>{t('revocationBestPractices')}</li>
+                  <li>• Include explicit revocation language in new wills</li>
+                  <li>• Destroy physical copies of old wills when possible</li>
+                  <li>• Notify executors and beneficiaries of changes</li>
+                  <li>• Keep records of will creation and revocation dates</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('commonMistakes')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>{t('revocationCommonMistakes')}</li>
+                  <li>• Failing to include revocation clauses</li>
+                  <li>• Assuming verbal revocations are sufficient</li>
+                  <li>• Not informing relevant parties of changes</li>
+                  <li>• Leaving multiple conflicting wills in existence</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('legalRequirements')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>{t('revocationLegalRequirements')}</li>
+                  <li>• Revocation must meet same formalities as will creation</li>
+                  <li>• Some jurisdictions require witness signatures for revocation</li>
+                  <li>• Partial revocations may require specific procedures</li>
+                  <li>• Codicils can modify without full revocation</li>
                 </ul>
               </div>
             </div>
@@ -158,28 +182,40 @@ const LegalResources = () => {
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('appointmentOfGuardians')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>{t('guardianAppointment')}</li>
+                  <li>• Parents can nominate guardians in their wills</li>
+                  <li>• Courts have final authority over guardian appointments</li>
+                  <li>• Best interests of the child are paramount</li>
+                  <li>• Multiple guardians can be appointed for different responsibilities</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">Guardian Responsibilities</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>{t('guardianResponsibilities')}</li>
+                  <li>• Physical care and custody of minor children</li>
+                  <li>• Educational and medical decision-making</li>
+                  <li>• Financial management of child's assets</li>
+                  <li>• Regular reporting to courts in some jurisdictions</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('crossBorderConsiderations')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>{t('crossBorderGuardianship')}</li>
+                  <li>• EU regulations facilitate cross-border recognition</li>
+                  <li>• Hague Convention provides international framework</li>
+                  <li>• Habitual residence determines applicable law</li>
+                  <li>• Local court approval may still be required</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('specialCircumstances')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>{t('specialGuardianshipCircumstances')}</li>
+                  <li>• Children with special needs may require specialized guardians</li>
+                  <li>• Temporary guardianship arrangements for emergencies</li>
+                  <li>• Financial guardians separate from personal guardians</li>
+                  <li>• Age of majority varies by country (16-18 years)</li>
                 </ul>
               </div>
             </div>
@@ -198,28 +234,40 @@ const LegalResources = () => {
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('euSuccessionRegulation')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>{t('euSuccessionRegulationDesc')}</li>
+                  <li>• Applies to deaths after August 17, 2015</li>
+                  <li>• Law of habitual residence generally applies</li>
+                  <li>• Choice of nationality law permitted in wills</li>
+                  <li>• European Certificate of Succession available</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('keyConsiderations')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>{t('inheritanceKeyConsiderations')}</li>
+                  <li>• Multiple tax jurisdictions may apply</li>
+                  <li>• Double taxation treaties provide relief</li>
+                  <li>• Asset location affects applicable procedures</li>
+                  <li>• Professional advice essential for complex estates</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('commonChallenges')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>{t('inheritanceCommonChallenges')}</li>
+                  <li>• Conflicting forced heirship rules</li>
+                  <li>• Different probate procedures by country</li>
+                  <li>• Currency exchange and valuation issues</li>
+                  <li>• Language barriers and translation requirements</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('planningStrategies')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>{t('inheritancePlanningStrategies')}</li>
+                  <li>• Choose applicable law explicitly in will</li>
+                  <li>• Consider trust structures for asset protection</li>
+                  <li>• Coordinate with tax planning strategies</li>
+                  <li>• Regular review as circumstances change</li>
                 </ul>
               </div>
             </div>

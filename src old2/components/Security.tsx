@@ -41,7 +41,7 @@ const Security = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
             {t('buildingSecure')}{' '}
             <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
-              {t('infrastructure')}
+              Infrastructure
             </span>
           </h1>
         </div>
@@ -56,7 +56,8 @@ const Security = () => {
                 {t('securityNoticeText')}
               </p>
               <p className="text-amber-700 leading-relaxed">
-                <strong>{t('recommendation')}:</strong> {t('usePlaceholderInfo')}
+                <strong>Recommendation:</strong> Use placeholder or fictional information when testing 
+                the will creation process during this development phase.
               </p>
             </div>
           </div>
@@ -83,7 +84,8 @@ const Security = () => {
               </div>
               <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('bankLevelSecurity')}</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                {t('bankLevelSecurityDesc')}
+                Military-grade AES-256 encryption for all data transmission and storage, 
+                meeting the same standards used by financial institutions.
               </p>
             </div>
 
@@ -117,19 +119,19 @@ const Security = () => {
             <div>
               <div className="text-3xl font-bold text-blue-400 mb-2">Phase 1</div>
               <h3 className="text-lg font-semibold mb-2">{t('basicEncryption')}</h3>
-              <p className="text-slate-300 text-sm">{t('sslTlsEncryption')}</p>
+              <p className="text-slate-300 text-sm">SSL/TLS encryption and secure data transmission</p>
             </div>
             
             <div>
               <div className="text-3xl font-bold text-green-400 mb-2">Phase 2</div>
               <h3 className="text-lg font-semibold mb-2">{t('advancedSecurity')}</h3>
-              <p className="text-slate-300 text-sm">{t('zeroKnowledgeEndToEnd')}</p>
+              <p className="text-slate-300 text-sm">Zero-knowledge architecture and end-to-end encryption</p>
             </div>
             
             <div>
               <div className="text-3xl font-bold text-purple-400 mb-2">Phase 3</div>
               <h3 className="text-lg font-semibold mb-2">{t('blockchainIntegration')}</h3>
-              <p className="text-slate-300 text-sm">{t('immutableStorage')}</p>
+              <p className="text-slate-300 text-sm">Immutable storage and smart contract execution</p>
             </div>
           </div>
 

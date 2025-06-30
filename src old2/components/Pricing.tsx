@@ -60,7 +60,8 @@ const Pricing = () => {
           <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 mb-8">
             <h3 className="text-lg font-semibold text-blue-800 mb-3">{t('helpUsShape')}</h3>
             <p className="text-blue-700 text-sm leading-relaxed">
-              {t('feedbackValuableMessage')}
+              Your feedback is invaluable in helping us create pricing that works for everyone. 
+              Please fill out our short feedback survey and we'll notify you once the live version launches.
             </p>
           </div>
 

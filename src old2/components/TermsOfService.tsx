@@ -1,14 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, FileText, AlertTriangle, Shield, Scale, Users } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const TermsOfService = () => {
   const { t } = useLanguage();
-
-  useEffect(() => {
-    console.log('[i18n] TermsOfService translated');
-  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
@@ -45,7 +41,7 @@ const TermsOfService = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
             {t('termsOfServiceTitle')}{' '}
             <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              {t('termsOfService')}
+              Service
             </span>
           </h1>
           
@@ -57,7 +53,7 @@ const TermsOfService = () => {
         {/* Last Updated */}
         <div className="bg-purple-50 border border-purple-200 rounded-2xl p-4 mb-8 text-center">
           <p className="text-purple-800 text-sm">
-            <strong>{t('lastUpdated')}:</strong> {t('lastUpdatedDate')} • <strong>{t('effectiveDate')}:</strong> {t('effectiveDateValue')}
+            <strong>{t('lastUpdated')}:</strong> January 2024 • <strong>{t('effectiveDate')}:</strong> January 2024
           </p>
         </div>
 
@@ -74,7 +70,9 @@ const TermsOfService = () => {
               {t('acceptanceText')}
             </p>
             <p className="text-slate-600 leading-relaxed">
-              {t('acceptanceText2')}
+              These terms constitute a legally binding agreement between you and HeirGuard (operated by 
+              Pertex Holdings). We may update these terms from time to time, and your continued use of 
+              our services constitutes acceptance of any changes.
             </p>
           </section>
 
@@ -89,17 +87,19 @@ const TermsOfService = () => {
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('whatWeProvide')}</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
-                  <li>• {t('whatWeProvideItem1')}</li>
-                  <li>• {t('whatWeProvideItem2')}</li>
-                  <li>• {t('whatWeProvideItem3')}</li>
-                  <li>• {t('whatWeProvideItem4')}</li>
+                  <li>• AI-powered digital will creation platform</li>
+                  <li>• Personalized legal guidance and document generation</li>
+                  <li>• Secure document storage and management</li>
+                  <li>• Educational resources and legal information</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('developmentStatus')}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  {t('developmentStatusDesc')}
+                  HeirGuard is currently in development. The platform is provided as a demonstration 
+                  and testing environment. Full security features and legal compliance measures are 
+                  being implemented and are not yet complete.
                 </p>
               </div>
             </div>
@@ -117,21 +117,26 @@ const TermsOfService = () => {
                     <div>
                       <h3 className="font-semibold mb-1">{t('notLegalAdvice')}</h3>
                       <p>
-                        {t('notLegalAdviceDesc')}
+                        HeirGuard provides technology tools and general information but does not provide 
+                        legal advice. Our service does not replace consultation with qualified legal professionals.
                       </p>
                     </div>
                     
                     <div>
-                      <h3 className="font-semibold mb-1">{t('professionalReviewRequired')}</h3>
+                      <h3 className="font-semibold mb-1">Professional Review Required</h3>
                       <p>
-                        {t('professionalReviewRequiredDesc')}
+                        All documents generated through our platform are drafts that should be reviewed 
+                        by qualified legal professionals before execution. We strongly recommend professional 
+                        legal review for all estate planning documents.
                       </p>
                     </div>
                     
                     <div>
-                      <h3 className="font-semibold mb-1">{t('jurisdictionCompliance')}</h3>
+                      <h3 className="font-semibold mb-1">Jurisdiction Compliance</h3>
                       <p>
-                        {t('jurisdictionComplianceDesc')}
+                        While we strive to provide jurisdiction-specific guidance, users must verify 
+                        compliance with local laws and may need additional legal documentation not 
+                        provided by our service.
                       </p>
                     </div>
                   </div>
@@ -151,30 +156,30 @@ const TermsOfService = () => {
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('accountSecurity')}</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
-                  <li>• {t('accountSecurityItem1')}</li>
-                  <li>• {t('accountSecurityItem2')}</li>
-                  <li>• {t('accountSecurityItem3')}</li>
-                  <li>• {t('accountSecurityItem4')}</li>
+                  <li>• Maintain the confidentiality of your account credentials</li>
+                  <li>• Notify us immediately of any unauthorized access</li>
+                  <li>• Use strong passwords and enable available security features</li>
+                  <li>• Log out of your account when using shared devices</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('accurateInformation')}</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
-                  <li>• {t('accurateInformationItem1')}</li>
-                  <li>• {t('accurateInformationItem2')}</li>
-                  <li>• {t('accurateInformationItem3')}</li>
-                  <li>• {t('accurateInformationItem4')}</li>
+                  <li>• Provide accurate and complete information</li>
+                  <li>• Update your information when circumstances change</li>
+                  <li>• Verify all generated documents for accuracy</li>
+                  <li>• Seek professional legal review before document execution</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('prohibitedUses')}</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
-                  <li>• {t('prohibitedUsesItem1')}</li>
-                  <li>• {t('prohibitedUsesItem2')}</li>
-                  <li>• {t('prohibitedUsesItem3')}</li>
-                  <li>• {t('prohibitedUsesItem4')}</li>
+                  <li>• Using the service for illegal or fraudulent purposes</li>
+                  <li>• Attempting to circumvent security measures</li>
+                  <li>• Sharing account access with unauthorized parties</li>
+                  <li>• Reverse engineering or copying our technology</li>
                 </ul>
               </div>
             </div>
@@ -192,21 +197,28 @@ const TermsOfService = () => {
                 <div>
                   <h3 className="font-semibold text-red-800 mb-2">{t('serviceLimitations')}</h3>
                   <p className="leading-relaxed">
-                    {t('serviceLimitationsDesc')}
+                    HeirGuard provides technology tools and general guidance but cannot guarantee that 
+                    generated documents will meet all legal requirements in every jurisdiction. Users 
+                    are responsible for ensuring legal compliance and proper document execution.
                   </p>
                 </div>
                 
                 <div>
                   <h3 className="font-semibold text-red-800 mb-2">{t('limitationOfLiability')}</h3>
                   <p className="leading-relaxed">
-                    {t('limitationOfLiabilityDesc')}
+                    To the maximum extent permitted by law, HeirGuard and its affiliates shall not be 
+                    liable for any indirect, incidental, special, consequential, or punitive damages, 
+                    including but not limited to loss of profits, data, or use, arising from your use 
+                    of our services.
                   </p>
                 </div>
                 
                 <div>
                   <h3 className="font-semibold text-red-800 mb-2">{t('maximumLiability')}</h3>
                   <p className="leading-relaxed">
-                    {t('maximumLiabilityDesc')}
+                    Our total liability to you for any claims arising from or related to our services 
+                    shall not exceed the amount you have paid us for the services in the twelve months 
+                    preceding the claim.
                   </p>
                 </div>
               </div>
@@ -224,21 +236,27 @@ const TermsOfService = () => {
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('dataCollectionUse')}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  {t('dataCollectionUseDesc')}
+                  We collect and process personal data as described in our Privacy Policy. By using 
+                  our services, you consent to such collection and processing in accordance with 
+                  applicable data protection laws, including GDPR.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('securityMeasures')}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  {t('securityMeasuresDesc')}
+                  We implement appropriate technical and organizational measures to protect your personal 
+                  data. However, no method of transmission or storage is 100% secure, and we cannot 
+                  guarantee absolute security.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('dataRetention')}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  {t('dataRetentionDesc')}
+                  We retain your personal data only as long as necessary for the purposes outlined in 
+                  our Privacy Policy or as required by law. You may request deletion of your data 
+                  subject to legal and operational requirements.
                 </p>
               </div>
             </div>
@@ -252,21 +270,26 @@ const TermsOfService = () => {
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('ourRights')}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  {t('ourRightsDesc')}
+                  All content, features, and functionality of our services, including but not limited 
+                  to text, graphics, logos, software, and design, are owned by HeirGuard or our licensors 
+                  and are protected by copyright, trademark, and other intellectual property laws.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('yourContent')}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  {t('yourContentDesc')}
+                  You retain ownership of the personal information and content you provide to our services. 
+                  By using our services, you grant us a limited license to use this information to provide 
+                  our services to you.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('generatedDocuments')}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  {t('generatedDocumentsDesc')}
+                  Documents generated through our platform belong to you. However, the underlying 
+                  technology, templates, and processes remain our intellectual property.
                 </p>
               </div>
             </div>
@@ -281,21 +304,27 @@ const TermsOfService = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('byYou')}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    {t('byYouDesc')}
+                    You may terminate your account at any time by contacting us or using account 
+                    deletion features when available. Upon termination, your access to our services 
+                    will cease, and we will delete your personal data as described in our Privacy Policy.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('byUs')}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    {t('byUsDesc')}
+                    We may terminate or suspend your account if you violate these terms, engage in 
+                    fraudulent activity, or for other legitimate business reasons. We will provide 
+                    reasonable notice when possible.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('effectOfTermination')}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    {t('effectOfTerminationDesc')}
+                    Upon termination, your right to use our services ceases immediately. Provisions 
+                    regarding liability limitations, intellectual property, and dispute resolution 
+                    survive termination.
                   </p>
                 </div>
               </div>
@@ -310,14 +339,18 @@ const TermsOfService = () => {
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('applicableLaw')}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  {t('applicableLawDesc')}
+                  These terms are governed by and construed in accordance with the laws of the Netherlands, 
+                  without regard to conflict of law principles. Any disputes arising from these terms 
+                  or our services shall be subject to the exclusive jurisdiction of Dutch courts.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('disputeResolution')}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  {t('disputeResolutionDesc')}
+                  We encourage resolving disputes through direct communication. If informal resolution 
+                  is not possible, disputes may be resolved through binding arbitration or court proceedings 
+                  as permitted by applicable law.
                 </p>
               </div>
             </div>
@@ -332,7 +365,7 @@ const TermsOfService = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-blue-800 mb-1">{t('legalQuestions2')}</h3>
                   <p className="text-blue-700 text-sm">
-                    {t('legalQuestionsDesc')}: 
+                    For questions about these terms or legal matters: 
                     <a href="mailto:legal@heirguard.com" className="ml-1 underline hover:no-underline">
                       legal@heirguard.com
                     </a>
@@ -342,7 +375,7 @@ const TermsOfService = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-blue-800 mb-1">{t('generalSupport')}</h3>
                   <p className="text-blue-700 text-sm">
-                    {t('generalSupportDesc')}: 
+                    For general inquiries and support: 
                     <a href="mailto:hont@pertexholdings.com" className="ml-1 underline hover:no-underline">
                       hont@pertexholdings.com
                     </a>
@@ -352,7 +385,7 @@ const TermsOfService = () => {
                 <div className="pt-3 border-t border-blue-300">
                   <p className="text-blue-700 text-sm">
                     <strong>HeirGuard</strong> {t('heirGuardOperated')}<br />
-                    {t('registeredInNetherlands')}
+                    Registered in the Netherlands
                   </p>
                 </div>
               </div>

@@ -29,21 +29,21 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const subject = encodeURIComponent(`${t('contactForm')} - ${formData.subject}`);
+    const subject = encodeURIComponent(`Contact Form Submission - ${formData.subject}`);
     const body = encodeURIComponent(`
-${t('contactForm')}
+Contact Form Submission
 
-${t('name')}: ${formData.name}
-${t('emailAddress')}: ${formData.email}
-${t('category')}: ${formData.category}
-${t('subject')}: ${formData.subject}
+Name: ${formData.name}
+Email: ${formData.email}
+Category: ${formData.category}
+Subject: ${formData.subject}
 
-${t('message')}:
+Message:
 ${formData.message}
 
 ---
-${t('submittedFrom')} HeirGuard ${t('contactForm')}
-${t('date')}: ${new Date().toLocaleString()}
+Submitted from HeirGuard Contact Form
+Date: ${new Date().toLocaleString()}
     `);
     
     window.location.href = `mailto:hont@pertexholdings.com?subject=${subject}&body=${body}`;
@@ -65,7 +65,7 @@ ${t('date')}: ${new Date().toLocaleString()}
           </div>
           <h1 className="text-3xl font-bold text-slate-800 mb-4">{t('messageSent')}</h1>
           <p className="text-lg text-slate-600 mb-8">
-            {t('thankYou')} {t('responseTimeDesc')}
+            {t('thankYou')} We'll get back to you within 24 hours during business days.
           </p>
           <Link
             to="/"
@@ -113,14 +113,15 @@ ${t('date')}: ${new Date().toLocaleString()}
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
-            {t('weAreHereToHelp')}{' '}
+            We're Here to{' '}
             <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              You
+              Help You
             </span>
           </h1>
           
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            {t('contactDescription')}
+            Have questions about creating your digital will, need technical support, or want to learn more about our services? 
+            Our team is ready to assist you.
           </p>
         </div>
 
@@ -138,7 +139,7 @@ ${t('date')}: ${new Date().toLocaleString()}
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-800 mb-1">{t('emailSupport')}</h3>
-                    <p className="text-slate-600 text-sm mb-2">{t('generalInquiry')}</p>
+                    <p className="text-slate-600 text-sm mb-2">For general inquiries and support</p>
                     <a href="mailto:hont@pertexholdings.com" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
                       hont@pertexholdings.com
                     </a>
@@ -151,7 +152,7 @@ ${t('date')}: ${new Date().toLocaleString()}
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-800 mb-1">{t('phoneSupport')}</h3>
-                    <p className="text-slate-600 text-sm mb-2">{t('businessHours')}</p>
+                    <p className="text-slate-600 text-sm mb-2">Monday - Friday, 9 AM - 6 PM CET</p>
                     <a href="tel:+36308508365" className="text-green-600 hover:text-green-700 text-sm font-medium">
                       +36 30 850 8365
                     </a>
@@ -179,9 +180,9 @@ ${t('date')}: ${new Date().toLocaleString()}
                   <div>
                     <h3 className="font-semibold text-slate-800 mb-1">{t('businessHours')}</h3>
                     <p className="text-slate-600 text-sm">
-                      {t('mondayFriday')}<br />
-                      {t('saturday')}<br />
-                      {t('sunday')}
+                      Monday - Friday: 9:00 AM - 6:00 PM CET<br />
+                      Saturday: 10:00 AM - 2:00 PM CET<br />
+                      Sunday: Closed
                     </p>
                   </div>
                 </div>
@@ -195,15 +196,15 @@ ${t('date')}: ${new Date().toLocaleString()}
                   <HelpCircle className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-800 mb-2">{t('frequentlyAskedQuestions')}</h3>
+                  <h3 className="font-semibold text-slate-800 mb-2">Frequently Asked Questions</h3>
                   <p className="text-slate-600 text-sm mb-4">
-                    {t('findQuickAnswers')}
+                    Find quick answers to common questions about digital wills, security, and our services.
                   </p>
                   <a
                     href="#"
                     className="inline-flex items-center text-blue-600 hover:text-blue-700 text-sm font-medium"
                   >
-                    {t('viewFAQ')}
+                    View FAQ
                     <ExternalLink className="ml-1 w-4 h-4" />
                   </a>
                 </div>
@@ -216,7 +217,7 @@ ${t('date')}: ${new Date().toLocaleString()}
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl border border-slate-200 p-8 md:p-12 shadow-xl">
               <div className="mb-8">
                 <h2 className="text-3xl font-bold text-slate-800 mb-2">{t('sendMessage')}</h2>
-                <p className="text-slate-600">{t('responseTimeMessage')}</p>
+                <p className="text-slate-600">We'll get back to you within 24 hours during business days</p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -320,7 +321,7 @@ ${t('date')}: ${new Date().toLocaleString()}
                     {isSubmitting ? (
                       <>
                         <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                        {t('sendingMessage')}
+                        Sending Message...
                       </>
                     ) : (
                       <>
@@ -334,7 +335,8 @@ ${t('date')}: ${new Date().toLocaleString()}
 
               <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-xl">
                 <p className="text-sm text-blue-800">
-                  <strong>{t('responseTime')}:</strong> {t('responseTimeMessage')}
+                  <strong>{t('responseTime')}:</strong> We typically respond to all inquiries within 24 hours during business days. 
+                  For urgent technical issues, please call our support line directly.
                 </p>
               </div>
             </div>
@@ -344,9 +346,9 @@ ${t('date')}: ${new Date().toLocaleString()}
         {/* Specialized Contact Options */}
         <section className="mt-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-800 mb-4">{t('specializedSupport')}</h2>
+            <h2 className="text-3xl font-bold text-slate-800 mb-4">Specialized Support</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              {t('specializedSupportDesc')}
+              Need specialized assistance? Contact our dedicated teams directly
             </p>
           </div>
 
@@ -355,8 +357,8 @@ ${t('date')}: ${new Date().toLocaleString()}
               <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <Mail className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('legalPartnerships')}</h3>
-              <p className="text-slate-600 text-sm mb-4">{t('legalPartnershipsDesc')}</p>
+              <h3 className="text-lg font-semibold text-slate-800 mb-2">Legal Partnerships</h3>
+              <p className="text-slate-600 text-sm mb-4">For lawyers and legal professionals</p>
               <a
                 href="mailto:hont@pertexholdings.com"
                 className="text-blue-600 hover:text-blue-700 font-medium text-sm"
@@ -369,8 +371,8 @@ ${t('date')}: ${new Date().toLocaleString()}
               <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-red-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <Mail className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('foundationPartnerships')}</h3>
-              <p className="text-slate-600 text-sm mb-4">{t('foundationPartnershipsDesc')}</p>
+              <h3 className="text-lg font-semibold text-slate-800 mb-2">Foundation Partnerships</h3>
+              <p className="text-slate-600 text-sm mb-4">For NGOs and charitable organizations</p>
               <a
                 href="mailto:hont@pertexholdings.com"
                 className="text-blue-600 hover:text-blue-700 font-medium text-sm"
@@ -383,8 +385,8 @@ ${t('date')}: ${new Date().toLocaleString()}
               <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <Mail className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('privacySecurityInquiries')}</h3>
-              <p className="text-slate-600 text-sm mb-4">{t('privacySecurityInquiriesDesc')}</p>
+              <h3 className="text-lg font-semibold text-slate-800 mb-2">Privacy & Security</h3>
+              <p className="text-slate-600 text-sm mb-4">Data protection and GDPR inquiries</p>
               <a
                 href="mailto:hont@pertexholdings.com"
                 className="text-blue-600 hover:text-blue-700 font-medium text-sm"

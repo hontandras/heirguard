@@ -25,18 +25,17 @@ const Support = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    const subject = encodeURIComponent(`${t('supportRequest')}: ${formData.subject}`);
+    const subject = encodeURIComponent(`Support Request: ${formData.subject}`);
     const body = encodeURIComponent(`
-${t('name')}: ${formData.name}
-${t('emailAddress')}: ${formData.email}
-${t('subject')}: ${formData.subject}
+Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}
 
-${t('message')}:
+Message:
 ${formData.message}
 
 ---
-${t('submittedFrom')} HeirGuard ${t('supportRequest')}
-${t('date')}: ${new Date().toLocaleString()}
+Sent from HeirGuard Support Form
     `);
     
     window.location.href = `mailto:hont@pertexholdings.com?subject=${subject}&body=${body}`;
@@ -52,7 +51,8 @@ ${t('date')}: ${new Date().toLocaleString()}
           </div>
           <h1 className="text-3xl font-bold text-slate-800 mb-4">{t('thankYou')}</h1>
           <p className="text-lg text-slate-600 mb-8">
-            {t('applicationReceivedDesc')}
+            We've received your submission. Your email client should have opened with your support request. 
+            We'll get back to you as soon as possible.
           </p>
           <Link
             to="/"
@@ -95,7 +95,7 @@ ${t('date')}: ${new Date().toLocaleString()}
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-full px-4 py-2 mb-6">
             <HelpCircle className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-medium text-slate-700">{t('support')}</span>
+            <span className="text-sm font-medium text-slate-700">Help & Support</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
@@ -116,7 +116,7 @@ ${t('date')}: ${new Date().toLocaleString()}
               <Mail className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-2xl font-bold text-slate-800 mb-2">{t('contactSupportTeam')}</h2>
-            <p className="text-slate-600">{t('weAreHereToHelp')}</p>
+            <p className="text-slate-600">We're here to help you with any questions or issues</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">

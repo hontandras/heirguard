@@ -45,22 +45,22 @@ const ForLawyers = () => {
     const body = encodeURIComponent(`
 Legal Partnership Application
 
-${t('fullName')}: ${formData.fullName}
-${t('lawFirmName')}: ${formData.firmName}
-${t('emailAddress')}: ${formData.email}
-${t('phoneNumber')}: ${formData.phone}
-${t('barNumber')}: ${formData.barNumber}
-${t('jurisdictions')}: ${formData.jurisdiction}
-${t('yearsOfExperience')}: ${formData.yearsExperience}
-${t('practiceAreas')}: ${formData.practiceAreas}
-${t('monthlyEstateClients')}: ${formData.clientVolume}
-${t('preferredPartnershipType')}: ${formData.partnershipType}
-${t('selectedPlan')}: ${formData.selectedPlan || t('notSpecified')}
+Full Name: ${formData.fullName}
+Law Firm: ${formData.firmName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Bar Number: ${formData.barNumber}
+Jurisdiction(s): ${formData.jurisdiction}
+Years of Experience: ${formData.yearsExperience}
+Practice Areas: ${formData.practiceAreas}
+Monthly Client Volume: ${formData.clientVolume}
+Preferred Partnership Type: ${formData.partnershipType}
+Selected Plan: ${formData.selectedPlan || 'Not specified'}
 
-${t('additionalInformation')}:
+Additional Information:
 ${formData.message}
 
-${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
+Application submitted on: ${new Date().toLocaleString()}
     `);
     
     window.location.href = `mailto:hont@pertexholdings.com?subject=${subject}&body=${body}`;
@@ -78,9 +78,10 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
           <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="w-10 h-10 text-white" />
           </div>
-          <h1 className="text-3xl font-bold text-slate-800 mb-4">{t('applicationReceived')}</h1>
+          <h1 className="text-3xl font-bold text-slate-800 mb-4">Application Received!</h1>
           <p className="text-lg text-slate-600 mb-8">
-            {t('applicationReceivedDesc')}
+            Thank you for your interest in partnering with us. Your email client should have opened with your application. 
+            Our legal partnerships team will review your application and contact you within 2 business days.
           </p>
           <Link
             to="/"
@@ -124,18 +125,19 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-full px-4 py-2 mb-6">
             <Scale className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-medium text-slate-700">{t('legalPartnershipProgram')}</span>
+            <span className="text-sm font-medium text-slate-700">Legal Partnership Program</span>
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight">
-            {t('transformYourPractice')}{' '}
+            Transform Your Estate Planning Practice with{' '}
             <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              {t('digitalInnovation')}
+              Digital Innovation
             </span>
           </h1>
           
           <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-8">
-            {t('lawyersHeroDescription')}
+            Join our network of legal professionals and offer your clients cutting-edge digital will creation 
+            technology while growing your practice with our white-label solutions and referral programs.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -144,13 +146,13 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <Scale className="mr-2 w-5 h-5" />
-              {t('applyForLegalPartnership')}
+              Apply for Partnership
             </a>
             <a
               href="#partnership-options"
               className="inline-flex items-center px-8 py-4 bg-white/80 backdrop-blur-sm text-slate-700 font-semibold rounded-2xl border border-slate-300 hover:bg-white hover:border-slate-400 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              {t('partnershipOptions')}
+              Explore Partnership Options
             </a>
           </div>
         </div>
@@ -158,29 +160,29 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
         {/* Statistics Section */}
         <div className="grid md:grid-cols-4 gap-6 mb-16">
           <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-200">
-            <div className="text-3xl font-bold text-blue-600 mb-2">{t('legalPartnersCount')}</div>
-            <p className="text-slate-600 text-sm">{t('legalPartners')}</p>
+            <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
+            <p className="text-slate-600 text-sm">Legal Partners</p>
           </div>
           <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-200">
-            <div className="text-3xl font-bold text-green-600 mb-2">{t('averageEfficiencyIncreaseValue')}</div>
-            <p className="text-slate-600 text-sm">{t('averageEfficiencyIncrease')}</p>
+            <div className="text-3xl font-bold text-green-600 mb-2">40%</div>
+            <p className="text-slate-600 text-sm">Average Efficiency Increase</p>
           </div>
           <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-200">
-            <div className="text-3xl font-bold text-purple-600 mb-2">{t('additionalRevenueGeneratedValue')}</div>
-            <p className="text-slate-600 text-sm">{t('additionalRevenueGenerated')}</p>
+            <div className="text-3xl font-bold text-purple-600 mb-2">€2.1M+</div>
+            <p className="text-slate-600 text-sm">Additional Revenue Generated</p>
           </div>
           <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-200">
-            <div className="text-3xl font-bold text-pink-600 mb-2">{t('partnerSatisfactionRateValue')}</div>
-            <p className="text-slate-600 text-sm">{t('partnerSatisfactionRate')}</p>
+            <div className="text-3xl font-bold text-pink-600 mb-2">98%</div>
+            <p className="text-slate-600 text-sm">Partner Satisfaction Rate</p>
           </div>
         </div>
 
         {/* Partnership Options */}
         <section id="partnership-options" className="mb-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-800 mb-4">{t('partnershipOptions')}</h2>
+            <h2 className="text-3xl font-bold text-slate-800 mb-4">Partnership Options</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              {t('chooseBestFit')}
+              Choose the partnership model that best fits your practice and client needs
             </p>
           </div>
 
@@ -191,37 +193,38 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
                 <Building className="w-8 h-8 text-white" />
               </div>
               
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">{t('whiteLabelSolution')}</h3>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">White-Label Solution</h3>
               <p className="text-slate-600 mb-6 leading-relaxed">
-                {t('seamlessIntegration')}
+                Integrate our platform seamlessly into your practice with your firm's branding. 
+                Offer clients a premium digital will creation experience under your name.
               </p>
 
               <div className="space-y-4 mb-8">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-slate-700">{t('customBrandingWithLogo')}</span>
+                  <span className="text-sm text-slate-700">Custom branding with your firm's logo and colors</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-slate-700">{t('clientManagementDashboard')}</span>
+                  <span className="text-sm text-slate-700">Client management dashboard</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-slate-700">{t('stateSpecificCompliance')}</span>
+                  <span className="text-sm text-slate-700">State-specific compliance automation</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-slate-700">{t('professionalDocumentReview')}</span>
+                  <span className="text-sm text-slate-700">Professional document review workflow</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-slate-700">{t('revenueSharing')}</span>
+                  <span className="text-sm text-slate-700">Revenue sharing: 60% to you, 40% to us</span>
                 </div>
               </div>
 
               <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
                 <p className="text-sm text-blue-800">
-                  <strong>{t('bestFor')}</strong> {t('establishedFirms')}
+                  <strong>Best for:</strong> Established firms wanting to modernize their estate planning services
                 </p>
               </div>
             </div>
@@ -232,37 +235,38 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
                 <Users className="w-8 h-8 text-white" />
               </div>
               
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">{t('referralProgram')}</h3>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Referral Program</h3>
               <p className="text-slate-600 mb-6 leading-relaxed">
-                {t('referClients')}
+                Refer clients to our platform and earn commissions while maintaining your relationship. 
+                Perfect for lawyers who want to offer digital solutions without integration complexity.
               </p>
 
               <div className="space-y-4 mb-8">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-slate-700">{t('commissionOnReferrals')}</span>
+                  <span className="text-sm text-slate-700">25% commission on all referred clients</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-slate-700">{t('referralTracking')}</span>
+                  <span className="text-sm text-slate-700">Dedicated referral tracking dashboard</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-slate-700">{t('clientProgressNotifications')}</span>
+                  <span className="text-sm text-slate-700">Client progress notifications</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-slate-700">{t('marketingMaterials')}</span>
+                  <span className="text-sm text-slate-700">Marketing materials and support</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-slate-700">{t('monthlyCommissions')}</span>
+                  <span className="text-sm text-slate-700">Monthly commission payments</span>
                 </div>
               </div>
 
               <div className="bg-green-50 border border-green-200 rounded-xl p-4">
                 <p className="text-sm text-green-800">
-                  <strong>{t('bestFor')}</strong> {t('soloSmallFirms')}
+                  <strong>Best for:</strong> Solo practitioners and small firms looking for additional revenue streams
                 </p>
               </div>
             </div>
@@ -272,9 +276,9 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
         {/* Benefits Section */}
         <section className="mb-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-800 mb-4">{t('whyPartnerWithHeirGuard')}</h2>
+            <h2 className="text-3xl font-bold text-slate-800 mb-4">Why Partner with HeirGuard?</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              {t('modernizingEstatePlanning')}
+              Join a growing network of legal professionals committed to modernizing estate planning
             </p>
           </div>
 
@@ -285,8 +289,8 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
                   <TrendingUp className="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-800 mb-2">{t('increasePracticeEfficiency')}</h3>
-                  <p className="text-slate-600">{t('increasePracticeEfficiencyDesc')}</p>
+                  <h3 className="font-semibold text-slate-800 mb-2">Increase Practice Efficiency</h3>
+                  <p className="text-slate-600">Automate routine will creation tasks and focus on high-value legal counsel.</p>
                 </div>
               </div>
 
@@ -295,8 +299,8 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
                   <DollarSign className="w-5 h-5 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-800 mb-2">{t('generateAdditionalRevenue')}</h3>
-                  <p className="text-slate-600">{t('generateAdditionalRevenueDesc')}</p>
+                  <h3 className="font-semibold text-slate-800 mb-2">Generate Additional Revenue</h3>
+                  <p className="text-slate-600">Earn through revenue sharing or referral commissions while serving more clients.</p>
                 </div>
               </div>
 
@@ -305,8 +309,8 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
                   <Shield className="w-5 h-5 text-purple-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-800 mb-2">{t('maintainProfessionalStandards')}</h3>
-                  <p className="text-slate-600">{t('maintainProfessionalStandardsDesc')}</p>
+                  <h3 className="font-semibold text-slate-800 mb-2">Maintain Professional Standards</h3>
+                  <p className="text-slate-600">All documents undergo professional legal review and compliance checking.</p>
                 </div>
               </div>
             </div>
@@ -317,8 +321,8 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
                   <Award className="w-5 h-5 text-pink-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-800 mb-2">{t('enhanceClientExperience')}</h3>
-                  <p className="text-slate-600">{t('enhanceClientExperienceDesc')}</p>
+                  <h3 className="font-semibold text-slate-800 mb-2">Enhance Client Experience</h3>
+                  <p className="text-slate-600">Offer modern, convenient digital solutions that clients expect in 2025.</p>
                 </div>
               </div>
 
@@ -327,8 +331,8 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
                   <FileText className="w-5 h-5 text-yellow-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-800 mb-2">{t('continuingEducation')}</h3>
-                  <p className="text-slate-600">{t('continuingEducationDesc')}</p>
+                  <h3 className="font-semibold text-slate-800 mb-2">Continuing Education</h3>
+                  <p className="text-slate-600">Access CLE programs and stay current with estate planning technology trends.</p>
                 </div>
               </div>
 
@@ -337,8 +341,8 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
                   <Briefcase className="w-5 h-5 text-indigo-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-800 mb-2">{t('practiceGrowthSupport')}</h3>
-                  <p className="text-slate-600">{t('practiceGrowthSupportDesc')}</p>
+                  <h3 className="font-semibold text-slate-800 mb-2">Practice Growth Support</h3>
+                  <p className="text-slate-600">Marketing support and business development resources to grow your practice.</p>
                 </div>
               </div>
             </div>
@@ -363,7 +367,7 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
               <div className="border-t border-slate-600 pt-6">
                 <p className="font-semibold text-lg">Michael Rodriguez, Esq.</p>
                 <p className="text-slate-300">Senior Partner, Rodriguez Estate Planning</p>
-                <p className="text-slate-400 text-sm mt-1">Licensed in California, Nevada, Arizona • {t('partnerSince')}</p>
+                <p className="text-slate-400 text-sm mt-1">Licensed in California, Nevada, Arizona • Partner since 2022</p>
               </div>
             </div>
           </div>
@@ -372,11 +376,11 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
         {/* Partnership Application Form */}
         <section id="partnership-application" className="bg-white/80 backdrop-blur-sm rounded-3xl border border-slate-200 p-8 md:p-12 shadow-xl">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-slate-800 mb-2">{t('applyForLegalPartnership')}</h2>
-            <p className="text-slate-600">{t('transformYourPracticeDesc')}</p>
+            <h2 className="text-3xl font-bold text-slate-800 mb-2">Apply for Legal Partnership</h2>
+            <p className="text-slate-600">Join our network of legal professionals and transform your estate planning practice</p>
             {formData.selectedPlan && (
               <div className="mt-4 inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-lg">
-                <span className="text-sm font-medium">{t('selectedPlan')}: {formData.selectedPlan}</span>
+                <span className="text-sm font-medium">Selected Plan: {formData.selectedPlan}</span>
               </div>
             )}
           </div>
@@ -401,7 +405,7 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
 
               <div>
                 <label htmlFor="firmName" className="block text-sm font-semibold text-slate-700 mb-2">
-                  {t('lawFirmName')} *
+                  Law Firm Name *
                 </label>
                 <input
                   type="text"
@@ -435,7 +439,7 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
 
               <div>
                 <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 mb-2">
-                  {t('phoneNumber')} *
+                  Phone Number *
                 </label>
                 <input
                   type="tel"
@@ -453,7 +457,7 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="barNumber" className="block text-sm font-semibold text-slate-700 mb-2">
-                  {t('barNumber')} *
+                  Bar Number *
                 </label>
                 <input
                   type="text"
@@ -469,7 +473,7 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
 
               <div>
                 <label htmlFor="jurisdiction" className="block text-sm font-semibold text-slate-700 mb-2">
-                  {t('jurisdictions')} *
+                  Jurisdiction(s) *
                 </label>
                 <input
                   type="text"
@@ -487,7 +491,7 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="yearsExperience" className="block text-sm font-semibold text-slate-700 mb-2">
-                  {t('yearsOfExperience')} *
+                  Years of Experience *
                 </label>
                 <select
                   id="yearsExperience"
@@ -497,17 +501,17 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                 >
-                  <option value="">{t('selectExperience')}</option>
-                  <option value="1-3">{t('years1to3')}</option>
-                  <option value="4-7">{t('years4to7')}</option>
-                  <option value="8-15">{t('years8to15')}</option>
-                  <option value="15+">{t('years15plus')}</option>
+                  <option value="">Select Experience</option>
+                  <option value="1-3">1-3 years</option>
+                  <option value="4-7">4-7 years</option>
+                  <option value="8-15">8-15 years</option>
+                  <option value="15+">15+ years</option>
                 </select>
               </div>
 
               <div>
                 <label htmlFor="clientVolume" className="block text-sm font-semibold text-slate-700 mb-2">
-                  {t('monthlyEstateClients')}
+                  Monthly Estate Planning Clients
                 </label>
                 <select
                   id="clientVolume"
@@ -516,18 +520,18 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                 >
-                  <option value="">{t('selectVolume')}</option>
-                  <option value="1-5">{t('clients1to5')}</option>
-                  <option value="6-15">{t('clients6to15')}</option>
-                  <option value="16-30">{t('clients16to30')}</option>
-                  <option value="30+">{t('clients30plus')}</option>
+                  <option value="">Select Volume</option>
+                  <option value="1-5">1-5 clients</option>
+                  <option value="6-15">6-15 clients</option>
+                  <option value="16-30">16-30 clients</option>
+                  <option value="30+">30+ clients</option>
                 </select>
               </div>
             </div>
 
             <div>
               <label htmlFor="practiceAreas" className="block text-sm font-semibold text-slate-700 mb-2">
-                {t('practiceAreas')} *
+                Practice Areas *
               </label>
               <textarea
                 id="practiceAreas"
@@ -543,7 +547,7 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
 
             <div>
               <label htmlFor="partnershipType" className="block text-sm font-semibold text-slate-700 mb-2">
-                {t('preferredPartnershipType')} *
+                Preferred Partnership Type *
               </label>
               <select
                 id="partnershipType"
@@ -553,16 +557,16 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
               >
-                <option value="">{t('selectPartnershipType')}</option>
-                <option value="white-label">{t('whiteLabelSolutionOption')}</option>
-                <option value="referral">{t('referralProgramOption')}</option>
-                <option value="both">{t('interestedInBoth')}</option>
+                <option value="">Select Partnership Type</option>
+                <option value="white-label">White-Label Solution</option>
+                <option value="referral">Referral Program</option>
+                <option value="both">Interested in Both Options</option>
               </select>
             </div>
 
             <div>
               <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
-                {t('additionalInformation')}
+                Additional Information
               </label>
               <textarea
                 id="message"
@@ -584,12 +588,12 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
                 {isSubmitting ? (
                   <>
                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                    {t('submittingApplication')}
+                    Submitting Application...
                   </>
                 ) : (
                   <>
                     <Send className="mr-2 w-5 h-5" />
-                    {t('submitPartnershipApplication')}
+                    Submit Partnership Application
                   </>
                 )}
               </button>
@@ -601,7 +605,8 @@ ${t('applicationSubmittedOn')} ${new Date().toLocaleString()}
               <Mail className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="text-sm text-blue-800">
-                  <strong>{t('barAdmissionRequired')}:</strong> {t('barAdmissionRequiredDesc')}{' '}
+                  <strong>Bar Admission Required:</strong> All legal partners must be licensed attorneys 
+                  in good standing with their respective state bar associations. Contact us at{' '}
                   <a href="mailto:hont@pertexholdings.com" className="underline hover:no-underline">
                     hont@pertexholdings.com
                   </a>

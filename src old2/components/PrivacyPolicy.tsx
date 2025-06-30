@@ -1,14 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Shield, Eye, Lock, Globe, FileText, AlertTriangle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const PrivacyPolicy = () => {
   const { t } = useLanguage();
-
-  useEffect(() => {
-    console.log('[i18n] PrivacyPolicy translated');
-  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
@@ -45,7 +41,7 @@ const PrivacyPolicy = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
             {t('privacyPolicyTitle')}{' '}
             <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              {t('privacyPolicy')}
+              Policy
             </span>
           </h1>
           
@@ -57,7 +53,7 @@ const PrivacyPolicy = () => {
         {/* Last Updated */}
         <div className="bg-blue-50 border border-blue-200 rounded-2xl p-4 mb-8 text-center">
           <p className="text-blue-800 text-sm">
-            <strong>{t('lastUpdated')}:</strong> {t('lastUpdatedDate')} • <strong>{t('effectiveDate')}:</strong> {t('effectiveDateValue')}
+            <strong>{t('lastUpdated')}:</strong> January 2024 • <strong>{t('effectiveDate')}:</strong> January 2024
           </p>
         </div>
 
@@ -74,7 +70,9 @@ const PrivacyPolicy = () => {
               {t('introductionText')}
             </p>
             <p className="text-slate-600 leading-relaxed">
-              {t('introductionText2')}
+              By using our services, you agree to the collection and use of information in accordance 
+              with this policy. We comply with the General Data Protection Regulation (GDPR) and other 
+              applicable data protection laws.
             </p>
           </section>
 
@@ -89,29 +87,29 @@ const PrivacyPolicy = () => {
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('personalInformation')}</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
-                  <li>• {t('personalInfoItem1')}</li>
-                  <li>• {t('personalInfoItem2')}</li>
-                  <li>• {t('personalInfoItem3')}</li>
-                  <li>• {t('personalInfoItem4')}</li>
+                  <li>• Name, date of birth, and contact information</li>
+                  <li>• Family relationships and beneficiary details</li>
+                  <li>• Asset information and financial details</li>
+                  <li>• Legal preferences and special instructions</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('technicalInformation')}</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
-                  <li>• {t('technicalInfoItem1')}</li>
-                  <li>• {t('technicalInfoItem2')}</li>
-                  <li>• {t('technicalInfoItem3')}</li>
-                  <li>• {t('technicalInfoItem4')}</li>
+                  <li>• IP address and device information</li>
+                  <li>• Browser type and operating system</li>
+                  <li>• Usage patterns and interaction data</li>
+                  <li>• Cookies and similar tracking technologies</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('communicationData')}</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
-                  <li>• {t('communicationDataItem1')}</li>
-                  <li>• {t('communicationDataItem2')}</li>
-                  <li>• {t('communicationDataItem3')}</li>
+                  <li>• Support requests and correspondence</li>
+                  <li>• Feedback and survey responses</li>
+                  <li>• Marketing communication preferences</li>
                 </ul>
               </div>
             </div>
@@ -128,28 +126,28 @@ const PrivacyPolicy = () => {
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('serviceProvision')}</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
-                  <li>• {t('serviceProvisionItem1')}</li>
-                  <li>• {t('serviceProvisionItem2')}</li>
-                  <li>• {t('serviceProvisionItem3')}</li>
-                  <li>• {t('serviceProvisionItem4')}</li>
+                  <li>• Creating and maintaining your digital will</li>
+                  <li>• Providing personalized legal guidance</li>
+                  <li>• Ensuring legal compliance and document validity</li>
+                  <li>• Facilitating secure document storage and access</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('communication')}</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
-                  <li>• {t('communicationItem1')}</li>
-                  <li>• {t('communicationItem2')}</li>
-                  <li>• {t('communicationItem3')}</li>
+                  <li>• Responding to your inquiries and support requests</li>
+                  <li>• Sending important service updates and notifications</li>
+                  <li>• Providing legal and security alerts when necessary</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('improvementAnalytics')}</h3>
                 <ul className="text-slate-600 text-sm space-y-1 ml-4">
-                  <li>• {t('improvementAnalyticsItem1')}</li>
-                  <li>• {t('improvementAnalyticsItem2')}</li>
-                  <li>• {t('improvementAnalyticsItem3')}</li>
+                  <li>• Analyzing usage patterns to improve our services</li>
+                  <li>• Developing new features and functionality</li>
+                  <li>• Ensuring platform security and preventing fraud</li>
                 </ul>
               </div>
             </div>
@@ -172,32 +170,32 @@ const PrivacyPolicy = () => {
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('accessPortability')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>• <strong>{t('rightToAccessTitle')}:</strong> {t('rightToAccess')}</li>
-                  <li>• <strong>{t('dataPortabilityTitle')}:</strong> {t('dataPortability')}</li>
+                  <li>• <strong>Right to Access:</strong> {t('rightToAccess')}</li>
+                  <li>• <strong>Data Portability:</strong> {t('dataPortability')}</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('controlCorrection')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>• <strong>{t('rightToRectificationTitle')}:</strong> {t('rightToRectification')}</li>
-                  <li>• <strong>{t('rightToErasureTitle')}:</strong> {t('rightToErasure')}</li>
+                  <li>• <strong>Right to Rectification:</strong> {t('rightToRectification')}</li>
+                  <li>• <strong>Right to Erasure:</strong> {t('rightToErasure')}</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('processingControl')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>• <strong>{t('rightToRestrictTitle')}:</strong> {t('rightToRestrict')}</li>
-                  <li>• <strong>{t('rightToObjectTitle')}:</strong> {t('rightToObject')}</li>
+                  <li>• <strong>Right to Restrict:</strong> {t('rightToRestrict')}</li>
+                  <li>• <strong>Right to Object:</strong> {t('rightToObject')}</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">{t('consentManagement')}</h3>
                 <ul className="text-slate-600 text-sm space-y-2">
-                  <li>• <strong>{t('withdrawConsentTitle')}:</strong> {t('withdrawConsent')}</li>
-                  <li>• <strong>{t('complaintRightsTitle')}:</strong> {t('complaintRights')}</li>
+                  <li>• <strong>Withdraw Consent:</strong> {t('withdrawConsent')}</li>
+                  <li>• <strong>Complaint Rights:</strong> {t('complaintRights')}</li>
                 </ul>
               </div>
             </div>
@@ -212,21 +210,21 @@ const PrivacyPolicy = () => {
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('encryptionStorageTitle')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Encryption & Storage</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   {t('encryptionStorage')}
                 </p>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('accessControlsTitle')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Access Controls</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   {t('accessControls')}
                 </p>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('infrastructureSecurityTitle')}</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Infrastructure Security</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   {t('infrastructureSecurity')}
                 </p>
@@ -241,22 +239,22 @@ const PrivacyPolicy = () => {
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('willDocumentsTitle')}</h3>
+                  <h3 className="text-lg font-semibold text-slate-800 mb-2">Will Documents</h3>
                   <p className="text-slate-600 text-sm">{t('willDocuments')}</p>
                 </div>
                 
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('accountDataTitle')}</h3>
+                  <h3 className="text-lg font-semibold text-slate-800 mb-2">Account Data</h3>
                   <p className="text-slate-600 text-sm">{t('accountData')}</p>
                 </div>
                 
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('analyticsDataTitle')}</h3>
+                  <h3 className="text-lg font-semibold text-slate-800 mb-2">Analytics Data</h3>
                   <p className="text-slate-600 text-sm">{t('analyticsData')}</p>
                 </div>
                 
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('supportRecordsTitle')}</h3>
+                  <h3 className="text-lg font-semibold text-slate-800 mb-2">Support Records</h3>
                   <p className="text-slate-600 text-sm">{t('supportRecords')}</p>
                 </div>
               </div>
@@ -275,12 +273,12 @@ const PrivacyPolicy = () => {
               
               <div className="space-y-3">
                 <div>
-                  <h4 className="font-semibold text-green-800 text-sm">{t('limitedSharingIncludes')}:</h4>
+                  <h4 className="font-semibold text-green-800 text-sm">Limited Sharing Includes:</h4>
                   <ul className="text-green-700 text-sm space-y-1 ml-4">
-                    <li>• {t('limitedSharingItem1')}</li>
-                    <li>• {t('limitedSharingItem2')}</li>
-                    <li>• {t('limitedSharingItem3')}</li>
-                    <li>• {t('limitedSharingItem4')}</li>
+                    <li>• Service providers under strict contractual obligations</li>
+                    <li>• Legal compliance when required by law</li>
+                    <li>• Anonymous analytics for platform improvement</li>
+                    <li>• Professional legal review (with your explicit consent)</li>
                   </ul>
                 </div>
               </div>
@@ -295,7 +293,7 @@ const PrivacyPolicy = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="text-lg font-semibold text-slate-800 mb-2">{t('privacyOfficer')}</h3>
-                  <p className="text-slate-600 text-sm mb-2">{t('privacyOfficerDesc')}:</p>
+                  <p className="text-slate-600 text-sm mb-2">For general privacy inquiries:</p>
                   <a href="mailto:privacy@heirguard.com" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
                     privacy@heirguard.com
                   </a>
@@ -312,7 +310,7 @@ const PrivacyPolicy = () => {
               
               <div className="mt-6 pt-6 border-t border-slate-300">
                 <p className="text-slate-600 text-sm">
-                  <strong>{t('responseTime')}:</strong> {t('responseTimeDesc')}
+                  <strong>{t('responseTime')}:</strong> {t('responseTime')}
                 </p>
               </div>
             </div>
